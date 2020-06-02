@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import TabPanel from '../TabPanel/TabPanel';
+import './NavBar.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Main() {
+function NavBar() {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
@@ -33,25 +34,16 @@ function Main() {
     return (
         <div className="menu">
             <AppBar position="static">
-        <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+              <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
                 <Tab label="Item One" />
                 <Tab label="Item Two" />
                 <Tab label="Item Three" />
                 </Tabs>
             </AppBar>
-            <TabPanel value={value} index={0}>
-                Item One
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                Item Three
-            </TabPanel>
         </div>
       )
   }
   
   
   
-  export default Main;
+  export default NavBar;
