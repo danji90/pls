@@ -1,14 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import Menu from '@material-ui/core/Menu';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import TabPanel from '../TabPanel/TabPanel';
 import './NavBar.css'
 
 const useStyles = makeStyles((theme) => ({
@@ -25,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 
 function NavBar() {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -34,11 +31,14 @@ function NavBar() {
     return (
         <div className="menu">
             <AppBar position="static">
-              <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-                <Tab label="Item One" />
-                <Tab label="Item Two" />
-                <Tab label="Item Three" />
-                </Tabs>
+              <Tabs centered value={value} onChange={handleChange} aria-label="simple tabs example">
+                <Tab label="Home" />
+                <Tab label="Individual services" />
+                <Tab label="Business services" />
+                <Tab label="Professional services" />
+                <Tab label="Level Test" />
+                <Tab label="Contact Form" />
+              </Tabs>
             </AppBar>
         </div>
       )
