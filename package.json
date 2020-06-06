@@ -16,6 +16,12 @@
     "react-render-html": "^0.6.0",
     "react-scripts": "3.2.0"
   },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "prettier": "^1.19.1"
+  },
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -25,7 +31,48 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true,
+      "jest": true
+    },
+    "parser": "babel-eslint",
+    "extends": [
+      "airbnb",
+      "airbnb/hooks",
+      "prettier",
+      "prettier/react"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "linebreak-style": "Off",
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js",
+            ".jsx"
+          ]
+        }
+      ]
+    },
+    "react/forbid-prop-types": "Off",
+    "prettier/prettier": "error",
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    }
+  },
+  "babel": {
+    "presets": [
+      "react-app",
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
   },
   "browserslist": {
     "production": [

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import NavBar from '../NavBar/NavBar';
+import NavBar from '../NavBar/NavBar2';
 import Home from '../Home/Home';
 import Service from '../Service/Service';
 import LandingPage from '../LandingPage/LandingPage';
@@ -27,7 +27,5 @@ function Main() {
         </>
       )
   }
-  
-  
   
   export default Main;

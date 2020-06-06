@@ -2,6 +2,7 @@ export const sectionData = [
     {
         // English Conversation
         id: 'conversation',
+        category: 'individual',
         title: 'English Conversation',
         content: {
             paragraphs: [
@@ -29,6 +30,7 @@ export const sectionData = [
     // English for the Office/Work
     {
         id: 'office_work',
+        category: 'business',
         title: 'English for the Office/Work',
         content: {
             paragraphs: [
@@ -59,6 +61,7 @@ export const sectionData = [
     // Exam preparation
     {
         id: 'exam_prep',
+        category: 'individual',
         title: 'Exam preparation',
         content: {
             paragraphs: [
@@ -93,6 +96,7 @@ export const sectionData = [
     // English Training in Companies
     {
         id: 'companies',
+        category: 'business',
         title: 'English Training in Companies',
         content: {
             paragraphs: [
@@ -123,6 +127,7 @@ export const sectionData = [
     // Workshops for English Teachers     
     {
         id: 'workshops_for_teachers',
+        category: 'professional',
         title: 'Workshops for English Teachers',
         content: {
             paragraphs: [
@@ -148,6 +153,7 @@ export const sectionData = [
     // Translations/Proof-reading/Presentations
     {
         id: 'trans_proof_present',
+        category: 'professional',
         title: 'Translations/Proof-reading/Presentations',
         content: {
             paragraphs: [
@@ -164,6 +170,7 @@ export const sectionData = [
     // English and Walking/Trekking    
     {
         id: 'walking_trekking',
+        category: 'individual',
         title: 'English and Walking/Trekking',
         content: {
             paragraphs: [
@@ -179,6 +186,7 @@ export const sectionData = [
     // English Consultant for Self-Study
     {
         id: 'self_study',
+        category: 'individual',
         title: 'English Consultant for Self-Study',
         content: {
             paragraphs: [
