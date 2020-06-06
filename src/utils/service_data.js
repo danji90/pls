@@ -1,6 +1,7 @@
 export const sectionData = [
     {
         // English Conversation
+        id: 'conversation',
         title: 'English Conversation',
         content: {
             paragraphs: [
@@ -27,6 +28,7 @@ export const sectionData = [
     },
     // English for the Office/Work
     {
+        id: 'office_work',
         title: 'English for the Office/Work',
         content: {
             paragraphs: [
@@ -56,6 +58,7 @@ export const sectionData = [
     },
     // Exam preparation
     {
+        id: 'exam_prep',
         title: 'Exam preparation',
         content: {
             paragraphs: [
@@ -89,6 +92,7 @@ export const sectionData = [
     },
     // English Training in Companies
     {
+        id: 'companies',
         title: 'English Training in Companies',
         content: {
             paragraphs: [
@@ -118,6 +122,7 @@ export const sectionData = [
     },
     // Workshops for English Teachers     
     {
+        id: 'workshops_for_teachers',
         title: 'Workshops for English Teachers',
         content: {
             paragraphs: [
@@ -142,6 +147,7 @@ export const sectionData = [
     },
     // Translations/Proof-reading/Presentations
     {
+        id: 'trans_proof_present',
         title: 'Translations/Proof-reading/Presentations',
         content: {
             paragraphs: [
@@ -155,25 +161,9 @@ export const sectionData = [
             links: []
         },
     },
-    // Translations/Proof-reading/Presentations     
-    {
-        title: 'Translations/Proof-reading/Presentations',
-        content: {
-            paragraphs: [
-                'Nowadays many companies require their key staff to to be able to communicate effectively in English. Obviously, one way to do that is for these members of staff to do in-company courses (see  English Training in Companies).',
-                'However, this often doesn’t cover all the company’s needs. An important email may need checking at the last moment before it is sent, a vital telephone call may need to be prepared at short notice, a video-conference may need to be rehearsed, a last-minute marketing text may need to be double-checked for its English, a job interview may involve assessing candidates‘ level of English, requiring an experienced native-speaker to determine how good their English really is.',
-                'I can be available to help you and your company in precisely these situations. You would pay me an annual retainer (Auftragshonorar/anticipo), depending on the size of the company, and I would be quickly available to help you in any of the above situations, and many others. Whatever services you require would be charged extra, for which you would get an estimate beforehand. This works out much cheaper than employing a full-time near-native, or a native-speaker to take care of these common problems.'
-            ]
-        },
-        extras: {
-            paragraphs: [
-                'Fill in the contact form if you wish to discuss how I can help your company.'
-            ],
-            links: []
-        },
-    },
     // English and Walking/Trekking    
     {
+        id: 'walking_trekking',
         title: 'English and Walking/Trekking',
         content: {
             paragraphs: [
@@ -188,6 +178,7 @@ export const sectionData = [
     },
     // English Consultant for Self-Study
     {
+        id: 'self_study',
         title: 'English Consultant for Self-Study',
         content: {
             paragraphs: [

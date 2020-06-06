@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import renderHTML from 'react-render-html';
-import './Section.css';
+import './Service.css';
 
-function Section(props) {
+function Service(props) {
     const { data } = props;
   
     return (
-      <div className="section-container">
+      <div id={data.id} className="service-container">
         <h1>{data.title}</h1>
         {data.content.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
         {data.content.list && 
@@ -42,10 +42,10 @@ function Section(props) {
     );
   }
   
-  Section.propTypes = {
+  Service.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
     value: PropTypes.any.isRequired,
   };
 
-  export default Section;
+  export default Service;
