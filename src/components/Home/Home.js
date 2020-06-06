@@ -1,12 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import renderHTML from 'react-render-html';
 import './Home.css';
 
 import portrait from '../../utils/images/pete.png'
 
-function Home(props) {
-  
+function Home() {
     return (
       <div id="home" className="home-container">
         <div className="portrait-container">
@@ -31,11 +28,5 @@ function Home(props) {
       </div>
     );
   }
-  
-  Home.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    value: PropTypes.any.isRequired,
-  };
 
   export default Home;
