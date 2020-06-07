@@ -76,8 +76,8 @@ const Dropdown = (props) => {
         {props.menuItems.map(item => {
           return (
           <StyledMenuItem onClick={() => {
-            moveToSection(item.id);
-            return handleClose();
+            setAnchorEl(null);
+            return moveToSection(item.id);
           }}>
             {item.title}
           </StyledMenuItem>)

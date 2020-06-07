@@ -6,6 +6,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import Dropdown from '../Dropdown/Dropdown';
+import { ReactComponent as PLSNavbarLogo } from '../../utils/images/pls_navbar_logo.svg' 
 import services from '../../utils/service_data.js';
 import { moveToSection } from '../../utils/appUtils.js';
 
@@ -72,7 +73,9 @@ class NavBar extends Component{
         <AppBar>
           <Toolbar>
             <Grid container direction = "row" justify = "space-between" alignItems="center">
-              <Typography color="inherit" variant = "headline">PLS</Typography>
+              <Typography color="inherit" variant = "headline">
+                <a href="/"><PLSNavbarLogo className="navbar-logo" /></a>
+              </Typography>
               <Typography color="inherit" variant = "headline"></Typography>
               <MenuIcon
                 className = {this.props.classes.sideBarIcon}
@@ -94,7 +97,7 @@ class NavBar extends Component{
                  this.setState({drawer:false});
                  return moveToSection('home');
                  }}>
-                  Home
+                  About
                </ListItem>
                <ListItem key = {2} button divider><Dropdown tabTitle="Individual services" menuItems={createMenuItems(services, 'individual')}/></ListItem>
                <ListItem key = {3} button divider><Dropdown tabTitle="Business services" menuItems={createMenuItems(services, 'business')}/></ListItem>
@@ -114,7 +117,9 @@ class NavBar extends Component{
     return (
       <AppBar position="static">
         <Toolbar className = {this.props.classes.toolBar}>
-          <Typography variant = "headline" style={{flexGrow:1}} color="inherit" >PLS</Typography>
+          <Typography variant = "headline" style={{flexGrow:1}} color="inherit" >
+            <a href="/"><PLSNavbarLogo className="navbar-logo" /></a>
+          </Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" onClick={() => moveToSection('home')}>About</Typography>
           <Typography variant = "subheading" className = {classes.padding} color="inherit" >
             <Dropdown tabTitle="Individual services" menuItems={createMenuItems(services, 'individual')}/>

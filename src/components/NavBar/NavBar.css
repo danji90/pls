@@ -4,3 +4,8 @@
   top: 0;
   width: 100%;
 }
+
+svg {
+  height: 40px;
+  width: 60px;
+}
