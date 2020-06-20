@@ -103,7 +103,7 @@ function NavBar() {
 
   return (
       <>
-        <AppBar positionFixed className={classes.appBar} color="transparent">
+        <AppBar position="fixed" className={classes.appBar} color="transparent">
           <div className={classes.brand}>
             <a href="/" className={classes.brand}>
               <PLSNavbarLogo className="navbar-logo" />
