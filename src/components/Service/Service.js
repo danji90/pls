@@ -8,36 +8,38 @@ function Service(props) {
   
     return (
       <div id={data.id} className="service-container">
-        <h1>{data.title}</h1>
-        {data.content.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
-        {data.content.list && 
-          <ol>
-              {data.content.list.map(item => <li>{renderHTML(item)}</li>)}
-          </ol>
-        }
-        <br />
-        {
-          data.format && 
-          <>
-            <h3>Format</h3>
-            {data.format.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
-          </>
-        }
-        {
-          data.extras && 
+        <div className="service-format">
+          <h2>{data.title}</h2>
+          {data.content.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
+          {data.content.list && 
+            <ol>
+                {data.content.list.map(item => <li>{renderHTML(item)}</li>)}
+            </ol>
+          }
+          <br />
+          {
+            data.format && 
             <>
-              {data.extras.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
+              <h3>Format</h3>
+              {data.format.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
             </>
-        }
-        <br />
-        {
-          data.cost && 
-            <>
-              <h3>Cost</h3>
-              {data.cost.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
-            </>
-        }
-        <br />
+          }
+          {
+            data.extras && 
+              <>
+                {data.extras.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
+              </>
+          }
+          <br />
+          {
+            data.cost && 
+              <>
+                <h3>Cost</h3>
+                {data.cost.paragraphs.map(paragraph => <p>{renderHTML(paragraph)}</p>)}
+              </>
+          }
+          <br />
+        </div>
       </div>
     );
   }

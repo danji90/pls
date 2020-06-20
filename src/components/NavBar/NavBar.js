@@ -20,7 +20,7 @@ import './NavBar.css'
 const useStyles = makeStyles((theme) => ({
   appBar: {
     [theme.breakpoints.down('sm')]: {
-      padding: '0 20px',
+      padding: '0',
     },
     display: 'flex',
     alignItems: 'center',
