@@ -1,15 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
 
 import { moveToSection } from '../../utils/appUtils.js';
 
@@ -45,7 +39,7 @@ const StyledMenuItem = withStyles((theme) => ({
 }))(MenuItem);
 
 const Dropdown = (props) => {
-  const menuItems = props.menuItems;
+  const {tabTitle, menuItems, onClick} = props;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -64,7 +58,7 @@ const Dropdown = (props) => {
         variant="contained"
         onClick={handleClick}
       >
-        {props.tabTitle}
+        {tabTitle}
       </Typography>
       <StyledMenu
         id="customized-menu"
@@ -73,9 +67,10 @@ const Dropdown = (props) => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        {props.menuItems.map(item => {
+        {menuItems.map(item => {
           return (
           <StyledMenuItem onClick={() => {
+            onClick();
             setAnchorEl(null);
             return moveToSection(item.id);
           }}>
@@ -87,9 +82,16 @@ const Dropdown = (props) => {
   );
 }
 
+Dropdown.defaultProps = {
+  tabTitle: undefined,
+  menuItems: [],
+  onClick: () => {},
+};
+
 Dropdown.propTypes = {
   tabTitle: PropTypes.string,
   menuItems: PropTypes.isRequired,
+  onClick: PropTypes.func,
 };
 
 export default Dropdown;
