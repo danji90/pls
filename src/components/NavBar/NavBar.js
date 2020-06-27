@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {
   AppBar,
-  Toolbar,
-  Typography,
+  Tabs,
+  Tab,
   List,
   ListItem,
-  SwipeableDrawer,
-  Hidden
+  Hidden,
+  Collapse
 } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -27,6 +27,8 @@ const useStyles = makeStyles((theme) => ({
     height: 60,
     backgroundColor: theme.colors.primary,
     top: 0,
+    borderBottom: '1px solid #35353520',
+    boxShadow: '0px 10px 15px #35353520',
   },
   brand: {
     display: 'flex',
@@ -40,13 +42,12 @@ const useStyles = makeStyles((theme) => ({
     width: 145,
   },
   title: {
-    [theme.breakpoints.down('md')]: {
-      fontSize: 15,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 18,
       marginLeft: 0,
     },
     fontSize: 22,
     fontWeight: 500,
-    marginLeft: 8,
   },
   links: {
     [theme.breakpoints.down('xs')]: {
@@ -80,7 +81,48 @@ const useStyles = makeStyles((theme) => ({
     paddingRight : 30,
     cursor : "pointer",
   },
+  tabs: {
+    width: '70%',
+  },
+  labelContainer: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    fontSize: "5px"
+  },
+  collapseCategories: {
+    position: 'fixed',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    top: 60,
+    left: 'auto',
+    right: 0,
+    background: 'white',
+    zIndex: 1100,
+    boxShadow: '0px 10px 15px #35353520',
+    fontWeight: 'bold',
+    padding: 0,
+  },
+  dropdown: {
+    position: 'fixed',
+    width: '100%',
+    backgroundColor: 'white',
+    top: 60,
+    zIndex: 1100,
+  },
+  listItem: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }));
+
+const tabStyle = {
+  minWidth: 50,
+  paddingLeft: 0,
+  paddingRight: 0,
+};
 
 const createMenuItems = (serviceArray, category) => {
   return serviceArray
@@ -96,10 +138,16 @@ const createMenuItems = (serviceArray, category) => {
 function NavBar() {
   const classes = useStyles();
   const [open, setMenuOpen] = useState(false);
+  const [service, setServiceOpen] = useState()
 
   const handleMenu = (event, setMenuOpen) => {
-    setMenuOpen(true);
+    setMenuOpen(!open);
   };
+
+  const handleChange = (event, newValue) => {
+    setServiceOpen(service === newValue ? null : newValue);
+  };
+  
 
   return (
       <>
@@ -107,43 +155,19 @@ function NavBar() {
           <div className={classes.brand}>
             <a href="/" className={classes.brand}>
               <PLSNavbarLogo className="navbar-logo" />
-              <Hidden smDown>
+              <Hidden only='xs'>
                 <div className={classes.title}>Pete's Language Services</div>
               </Hidden>
             </a>
           </div>
 
-          <div className={classes.buttonCollapse}>
+          <Hidden mdUp>
             <IconButton onClick={(e) => handleMenu(e, setMenuOpen)}>
               <MenuIcon />
             </IconButton>
-            <SwipeableDrawer
-              open={open}
-              onClose={()=>{setMenuOpen(false)}}
-              onOpen={()=>{setMenuOpen(true)}}
-              >
-                <div
-                  tabIndex={0}
-                  role="button"
-                  >
-                  <List className = {classes.list}>
-                    <ListItem key = {1} button divider onClick={()=>{
-                      setMenuOpen(false);
-                      return moveToSection('home');
-                      }}>
-                        About
-                    </ListItem>
-                    <ListItem key = {2} button divider><Dropdown onClick={() => setMenuOpen(false)} tabTitle="Individual services" menuItems={createMenuItems(services, 'individual')}/></ListItem>
-                    <ListItem key = {3} button divider><Dropdown onClick={() => setMenuOpen(false)} tabTitle="Business services" menuItems={createMenuItems(services, 'business')}/></ListItem>
-                    <ListItem key = {4} button divider><Dropdown onClick={() => setMenuOpen(false)} tabTitle="Professional services" menuItems={createMenuItems(services, 'professional')}/></ListItem>
-                    <ListItem key = {6} button divider onClick={()=>setMenuOpen(false)}>Level Test</ListItem>
-                    <ListItem key = {7} button divider onClick={()=>{setMenuOpen(false)}}>Contact Form</ListItem>
-                  </List>
-                </div>
-            </SwipeableDrawer>
-          </div>
+          </Hidden>
 
-          <div className={classes.links}>
+          {/* <div className={classes.links}>
             <Toolbar className = {classes.toolBar}>
               <Typography variant = "subheading" className = {classes.padding} color="inherit" onClick={() => moveToSection('home')}>About</Typography>
               <Typography variant = "subheading" className = {classes.padding} color="inherit" >
@@ -158,8 +182,133 @@ function NavBar() {
               <Typography variant = "subheading" className = {classes.padding} color="inherit" >Level Test</Typography>
               <Typography variant = "subheading" className = {classes.padding} color="inherit" >Contact Form</Typography>
             </Toolbar>
-          </div>
+          </div> */}
+          <Hidden smDown>
+            <Tabs
+              indicatorColor='primary'
+              className={classes.tabs}
+              value={service}
+              onChange={handleChange}
+              variant="fullWidth"
+            >
+              <Tab value="home" label="Home" style={tabStyle} classes={{ labelContainer: classes.labelContainer }} />
+              <Tab value="individual" label="Individual Services" style={tabStyle} classes={{ labelContainer: classes.labelContainer }}/>
+              <Tab value="professional" label="Professional Services" style={tabStyle} classes={classes.tabLabel}/>
+              <Tab value="business" label="Business Services" style={tabStyle} classes={classes.tabLabel}/>
+              <Tab value="test" label="Level Test" style={tabStyle} classes={classes.tabLabel}/>
+              <Tab value="contact" label="Contact Form" style={tabStyle} classes={classes.tabLabel}/>
+            </Tabs>
+          </Hidden>
         </AppBar>
+
+        <Hidden smDown>
+          <Collapse
+            className={classes.collapseCategories}
+            in={service === 'individual'}
+            >
+            <Dropdown
+              onClick={() => {
+                setServiceOpen();
+                setMenuOpen(false);
+              }} 
+              tabTitle="Individual services"
+              menuItems={createMenuItems(services, 'individual')}
+              />
+          </Collapse>
+        </Hidden>
+
+        <Hidden mdUp>
+          <Collapse
+              in={open}
+              >
+                <div
+                  tabIndex={0}
+                  role="button"
+                  >
+                  <List className = {classes.collapseCategories} >
+                    <ListItem key={1} button divider onClick={()=>{
+                      setMenuOpen(false);
+                      return moveToSection('home');
+                      }}
+                      className={classes.listItem}>
+                        Home
+                    </ListItem>
+                    <ListItem key={2} button divider onClick={()=>{
+                        setServiceOpen(service === 'individual' ? null : 'individual');
+                      }}
+                      className={classes.listItem}>
+                      Individual Services
+                    </ListItem>
+                    <Collapse
+                      style={{width: '100%'}}
+                      in={service === 'individual'}
+                      >
+                      <Dropdown
+                        onClick={() => {
+                          setServiceOpen();
+                          setMenuOpen(false);
+                        }} 
+                        tabTitle="Individual services"
+                        menuItems={createMenuItems(services, 'individual')}
+                        />
+                    </Collapse>
+                    <ListItem key={3} button divider onClick={()=>{
+                        setServiceOpen(service === 'professional' ? null : 'professional');
+                      }}
+                      className={classes.listItem}>
+                      Professional Services
+                    </ListItem>
+                    <Collapse
+                      style={{width: '100%'}}
+                      in={service === 'professional'}
+                      >
+                      <Dropdown
+                        onClick={() => {
+                          setServiceOpen();
+                          setMenuOpen(false);
+                        }} 
+                        menuItems={createMenuItems(services, 'professional')}
+                        />
+                    </Collapse>
+                    <ListItem key={4} button divider onClick={()=>{
+                        setServiceOpen(service === 'business' ? null : 'business');
+                      }}
+                      className={classes.listItem}>
+                      Business Services
+                    </ListItem>
+                    <Collapse
+                      style={{width: '100%'}}
+                      in={service === 'business'}
+                      >
+                      <Dropdown
+                        onClick={() => {
+                          setServiceOpen();
+                          setMenuOpen(false);
+                        }} 
+                        tabTitle="Business services"
+                        menuItems={createMenuItems(services, 'business')}
+                        />
+                    </Collapse>
+                    <ListItem key={5} button divider onClick={()=>{
+                        setServiceOpen();
+                        setMenuOpen(false);
+                        // return moveToSection('home');
+                      }}
+                      className={classes.listItem}>
+                      Level Test
+                    </ListItem>
+                    <ListItem key={6} button onClick={()=>{
+                        setServiceOpen();
+                        setMenuOpen(false);
+                        // return moveToSection('home');
+                      }}
+                      className={classes.listItem}>
+                      Contact Form
+                    </ListItem>
+                  </List>
+                </div>
+              </Collapse>
+        </Hidden>
       </>
     )
   }
