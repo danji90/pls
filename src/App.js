@@ -27,13 +27,31 @@ const theme = createMuiTheme({
       },
       colorPrimary: {},
     },
+    MuiTabs: {
+      root: {
+        height: '100%',
+      },
+      flexContainer: {
+        height: '100%',
+      }
+    },
+    MuiTab: {
+      root: {
+        textTransform: 'unset',
+      },
+    },
+    MuiBox: {
+      root: {
+        padding: 20,
+      },
+    },
   },
 });
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-        <Main />
+      <Main />
     </ThemeProvider>    
   );
 }
