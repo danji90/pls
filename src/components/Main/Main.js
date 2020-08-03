@@ -3,20 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
-import { makeStyles } from '@material-ui/core/styles';
-import {
-  AppBar,
-  Tabs,
-  Tab,
-  List,
-  ListItem,
-  Hidden,
-  Collapse,
-  Box,
-  Typography
-} from '@material-ui/core';
 
 import TabPanel from '../TabPanel/TabPanel';
 import Home from '../Home/Home';
@@ -36,7 +23,7 @@ const Main = () => {
 
   return (
     <>
-      <Router>
+      <Router basename="/pls">
       <div>
         <NavBar />
         <Switch>
