@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "97d5a52a7834714ac7beeb17dcd6e3d4",
+    "revision": "34e146d05caaf76cc8a52b692c420407",
     "url": "/pls/index.html"
   },
   {
-    "revision": "086cbec20aad6cc127c9",
+    "revision": "366e027616f3ac9a5d13",
     "url": "/pls/static/css/main.92274af2.chunk.css"
   },
   {
-    "revision": "6d9248bdafc57846194a",
-    "url": "/pls/static/js/2.97cdf0d9.chunk.js"
+    "revision": "b2ed4e226fefa28f2b02",
+    "url": "/pls/static/js/2.2dba6031.chunk.js"
   },
   {
-    "revision": "086cbec20aad6cc127c9",
-    "url": "/pls/static/js/main.73170aff.chunk.js"
+    "revision": "366e027616f3ac9a5d13",
+    "url": "/pls/static/js/main.72b10a0b.chunk.js"
   },
   {
     "revision": "295a7c3f784ff9518f54",
     "url": "/pls/static/js/runtime-main.e4849d10.js"
   },
   {
-    "revision": "67c47b344c82a6757b5f18e0091c970d",
-    "url": "/pls/static/media/chatting.67c47b34.png"
+    "revision": "dad2a21bf358df1a8915eb17c93beb63",
+    "url": "/pls/static/media/chatting.dad2a21b.svg"
   },
   {
     "revision": "b1b08f0007f50fc3860d24b9fa38b864",
