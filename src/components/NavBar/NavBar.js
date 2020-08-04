@@ -151,7 +151,7 @@ const NavBar = () => {
       {/* NavBar */}
       <AppBar position="fixed" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
-          <a href="/" className={classes.brand}>
+          <a href="/pls" className={classes.brand}>
             <PLSNavbarLogo className="navbar-logo" />
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>
