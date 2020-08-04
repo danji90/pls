@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 
 import TabPanel from '../TabPanel/TabPanel';
@@ -14,13 +15,6 @@ import './Main.css';
 import NavBar from '../NavBar/NavBar.js';
 
 const Main = () => {
-  const [value, setValue] = useState(false);
-  const [open, setMenuOpen] = useState(false);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <>
       <Router basename="/pls">
@@ -28,39 +22,48 @@ const Main = () => {
         <NavBar />
         <Switch>
           <Route exact path="/">
-            <TabPanel index={0}>
-              <LandingPage />
-            </TabPanel>
+            <Redirect to="/home" />
           </Route>
           <Route exact path="/home">
+            <LandingPage />
             <TabPanel index={0}>
               <Home />
             </TabPanel>
           </Route>
           <Route path="/individual">
-            <TabPanel index={1}>
-              Individual
-            </TabPanel>
+            <div style={{marginTop: 60}}>
+              <TabPanel index={1}>
+                Individual
+              </TabPanel>
+            </div>
           </Route>
           <Route path="/professional">
-            <TabPanel index={2}>
-              Professional
-            </TabPanel>
+            <div style={{marginTop: 60}}>
+              <TabPanel index={2}>
+                Professional
+              </TabPanel>
+            </div>
           </Route>
           <Route path="/business">
-            <TabPanel index={3}>
-              business
-            </TabPanel>
+            <div style={{marginTop: 60}}>
+              <TabPanel index={3}>
+                Business
+              </TabPanel>
+            </div>
           </Route>
           <Route path="/test">
-            <TabPanel index={4}>
-              Level test
-            </TabPanel>
+            <div style={{marginTop: 60}}>
+              <TabPanel index={4}>
+                Level test
+              </TabPanel>
+            </div>
           </Route>
           <Route path="/contact">
-            <TabPanel index={5}>
-              Contact Form
-            </TabPanel>
+            <div style={{marginTop: 60}}>
+              <TabPanel index={5}>
+                Contact Form
+              </TabPanel>
+            </div>
           </Route>
         </Switch>
       </div>

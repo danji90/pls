@@ -8,9 +8,12 @@ import Box from '@material-ui/core/Box';
 const useStyles = makeStyles({
   landingContainer: {
     position: 'relative',
-    backgroundColor: props => props.color,
+    backgroundColor: (props) => props.color,
+    padding: '40px 20px 40px',
     display: 'flex',
+    alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: (props) => props.flexDirection,
   },
   bottomSlice: {
     '&::before': {
@@ -28,9 +31,8 @@ const useStyles = makeStyles({
       content: '""',
       position: 'absolute',
       top: 0,
-      right: 0,
       borderTop: '80px solid #fff',
-      borderRight: '100vw solid transparent',
+      borderLeft: '100vw solid transparent',
       width: 0,
     }
   }
@@ -42,7 +44,9 @@ const PlsContainer = (props) => {
 
   return (
     <div
-      className={`${classes.landingContainer} ${bottomSlice ? classes.bottomSlice : ''}`}
+      className={`${classes.landingContainer}
+      ${bottomSlice ? classes.bottomSlice : ''}
+      ${topSlice ? classes.topSlice : ''}`}
     >
       {children}
     </div>
@@ -54,6 +58,7 @@ PlsContainer.propTypes = {
   color: PropTypes.string,
   topSlice: PropTypes.bool,
   bottomSlice: PropTypes.bool,
+  flexDirection: PropTypes.string,
 };
 
 PlsContainer.defaultProps = {
@@ -61,6 +66,7 @@ PlsContainer.defaultProps = {
   color: '#fec44f',
   topSlice: false,
   bottomSlice: false,
+  flexDirection: 'row',
 };
 
 export default PlsContainer;

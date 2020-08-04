@@ -11,7 +11,7 @@ function LandingPage() {
         <div className="landing-box">
           <div className="landing-title">
             <PLSLogo className="pls_landing_logo"/>
-            <Button variant="contained" color="primary" onClick={() => moveToSection('main_content')}>
+            <Button variant="contained" color="primary" onClick={() => moveToSection('home_title')}>
               Explore
             </Button>
           </div>

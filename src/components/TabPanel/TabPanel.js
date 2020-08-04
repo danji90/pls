@@ -7,7 +7,6 @@ import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   tabPanel: {
-    marginTop: 60,
     padding: '0 40px 0',
   },
 }));
