@@ -1,32 +1,30 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
+import PlsContainer from '../PlsContainer/PlsContainer'
 import './Home.css';
 
 import portrait from '../../utils/images/pete.png';
 import study from '../../utils/images/study_group.jpg';
-import chatting from '../../utils/images/chatting.png';
-import { makeStyles } from '@material-ui/core';
+import chatting from '../../utils/images/chatting.svg';
+
 
 const useStyles = makeStyles((theme) => ({
-  landingContainer: {
-    backgroundColor: '#fec44f',
-    height: 1400,
-    display: 'flex',
-    justifyContent: 'center',
-  },
   landingTitle: {
     width: '100%',
     margin: 50,
     '& h1': {
-      fontSize: 100,
+      fontSize: '10vw',
     }
   },
   mainTitle: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexGrow: 1,
+    flexWrap: 'wrap',
   },
   mainImage: {
-    height: 200,
+    maxHeight: 200,
   }
 }));
 
@@ -34,15 +32,15 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <div className={classes.landingContainer}>
+      <PlsContainer bottomSlice={true}>
         <div className={classes.landingTitle}>
-        <div className={classes.mainTitle}>
-          <h1>Pete's Language Services</h1>
-          <img className={classes.mainImage} src={chatting} alt="chatting" ></img>
-        </div>
+          <div className={classes.mainTitle}>
+            <img className={classes.mainImage} src={chatting} alt="chatting" ></img>
+            <h1>Pete's Language Services</h1>
+          </div>
           <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h2>
         </div>
-      </div>
+      </PlsContainer>
       {/* <div id="home" className="home-container">
         <div className="home-format">
           <div className="home-introduction">
