@@ -1,5 +1,5 @@
 .landing-container {
-  background-image: url('../../utils/images/desk.jpg');
+  background-image: url('../../utils/images/deskYellow.jpg');
   background-position: center; /* Center the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   background-repeat: no-repeat, repeat;
@@ -7,6 +7,7 @@
   align-items: center; 
   justify-content: center; 
   width: 100%;
+  border-bottom: 5px solid #353535;
 }
 
 /* make keyframes that tell the start state and the end state of our object */

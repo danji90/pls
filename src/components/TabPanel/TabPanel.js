@@ -5,16 +5,16 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
   tabPanel: {
-    padding: '0 40px 0',
+    backgroundColor: (props) => props.backgroundColor,
   },
-}));
+});
 
 const TabPanel = (props) => {
     const { children, index } = props;
-    const classes = useStyles();
-  
+    const classes = useStyles(props);
+    console.log(props);
     return (
       <div
         role="tabpanel"
@@ -34,6 +34,12 @@ const TabPanel = (props) => {
   TabPanel.propTypes = {
     children: PropTypes.node,
     index: PropTypes.any.isRequired,
+    backgroundColor: PropTypes.string,
+  };
+
+  TabPanel.defaultProps = {
+    children: undefined,
+    backgroundColor: '#fec44f',
   };
 
   export default TabPanel;

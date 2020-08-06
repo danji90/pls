@@ -26,7 +26,7 @@ const Main = () => {
           </Route>
           <Route exact path="/home">
             <LandingPage />
-            <TabPanel index={0}>
+            <TabPanel index={0} >
               <Home />
             </TabPanel>
           </Route>
