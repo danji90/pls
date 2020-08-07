@@ -113,8 +113,8 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
   const classes = useStyles();
-  const valueOnLoad = window.location.pathname.split('/').length === 3 &&
-    window.location.pathname.split('/')[2].toLowerCase()
+  const valueOnLoad = window.location.hash.split('/').length === 2 &&
+    window.location.hash.split('/')[1].toLowerCase();
   const [value, setValue] = useState(tabValues.find(value => value === valueOnLoad) || 'home');
   const [open, setMenuOpen] = useState(false);
 
@@ -126,7 +126,7 @@ const NavBar = () => {
     <>
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
-          <a href="/pls" className={classes.brand}>
+          <a href="/pls/" className={classes.brand}>
             <img src={logo} alt="pls-logo" />
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>

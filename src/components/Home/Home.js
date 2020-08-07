@@ -5,7 +5,6 @@ import LandingPage from '../LandingPage/LandingPage';
 
 import portrait from '../../utils/images/pete.png';
 import divider from '../../utils/images/pls_divider.png';
-import chatting from '../../utils/images/chatting.svg';
 import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg'
 
 
@@ -71,19 +70,26 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   bioTextContainer: {
-    padding: 30,
-    flex: 2,
+    padding: '20px 0',
+    flex: 1,
+    minWidth: 260,
+    marginRight: 30,
   },
   bioImageContainer: {
-    height: 250,
-    width: 250,
+    height: 220,
+    width: 220,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
     border: '5px solid #353535',
     borderRadius: '50%',
+    marginRight: 30,
     overflow: 'hidden',
   },
+  bioCredentials: {
+    flex: 1,
+    minWidth: 260,
+  }
 }));
 
 const Home = () => {
@@ -95,7 +101,6 @@ const Home = () => {
           <div className={classes.mainTitle}>
             <div className={classes.mainImageContainer}>
               <PLSLogo className={classes.mainImage} />
-              {/* <img className={classes.mainImage} src={chatting} alt="chatting" ></img> */}
             </div>
             <h1>Pete's Language Services</h1>
           </div>
@@ -116,7 +121,7 @@ const Home = () => {
                   Hi there! I'm Pete Marsh-Hunn and I’m originally from Bournemouth, UK. After some years of working as an English teacher in Germany, Morocco and Saudi Arabia, I moved to Bolzano/Bozen in the Dolomites region of Northern Italy where I’ve been living for over 30 years. With my extensive English-teaching experience and my very people-centred, friendly approach I think I can help you in many different ways to improve your English. Click on whichever of the above pages that interest you most.
                 </span>
               </div>
-              <div>
+              <div className={classes.bioCredentials}>
                 <p>My credentials:</p>
                 <ul>
                   <li>English native-speaker from the UK.</li>
