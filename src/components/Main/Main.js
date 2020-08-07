@@ -1,6 +1,6 @@
 import React, { useState} from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route,
   Redirect,
@@ -17,9 +17,11 @@ import NavBar from '../NavBar/NavBar.js';
 import { tabValues } from '../../utils/appUtils';
 
 const Main = () => {
+  console.log(window.location);
   return (
     <>
-      <Router basename="/pls">
+      <Router basename="/">
+      {/* <Router> */}
       <div>
         <NavBar />
         <Switch>
@@ -58,7 +60,6 @@ const Main = () => {
             </TabPanel>
           </Route>
           <Route exact path="/*">
-            {/* Redirect to home for all other paths */}
             <Redirect to="/home" />
           </Route>
         </Switch>
