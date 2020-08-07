@@ -14,6 +14,7 @@ import Footer from '../Footer/Footer';
 import sectionData from '../../utils/service_data.js';
 import './Main.css';
 import NavBar from '../NavBar/NavBar.js';
+import { tabValues } from '../../utils/appUtils';
 
 const Main = () => {
   return (
@@ -26,46 +27,39 @@ const Main = () => {
             <Redirect to="/home" />
           </Route>
           <Route exact path="/home">
-            {/* <LandingPage /> */}
             <TabPanel index={0} >
               <Home />
               <Footer />
             </TabPanel>
           </Route>
           <Route path="/individual">
-            <div style={{marginTop: 60}}>
-              <TabPanel index={1}>
-                Individual
-              </TabPanel>
-            </div>
+            <TabPanel index={1}>
+              Individual
+            </TabPanel>
           </Route>
           <Route path="/professional">
-            <div style={{marginTop: 60}}>
-              <TabPanel index={2}>
-                Professional
-              </TabPanel>
-            </div>
+            <TabPanel index={2}>
+              Professional
+            </TabPanel>
           </Route>
           <Route path="/business">
-            <div style={{marginTop: 60}}>
-              <TabPanel index={3}>
-                Business
-              </TabPanel>
-            </div>
+            <TabPanel index={3}>
+              Business
+            </TabPanel>
           </Route>
           <Route path="/test">
-            <div style={{marginTop: 60}}>
-              <TabPanel index={4}>
-                Level test
-              </TabPanel>
-            </div>
+            <TabPanel index={4}>
+              Level test
+            </TabPanel>
           </Route>
           <Route path="/contact">
-            <div style={{marginTop: 60}}>
-              <TabPanel index={5}>
-                Contact Form
-              </TabPanel>
-            </div>
+            <TabPanel index={5}>
+              Contact Form
+            </TabPanel>
+          </Route>
+          <Route exact path="/*">
+            {/* Redirect to home for all other paths */}
+            <Redirect to="/home" />
           </Route>
         </Switch>
       </div>

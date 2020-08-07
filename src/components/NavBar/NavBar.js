@@ -11,8 +11,8 @@ import {
   Collapse,
   } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
+import { Menu, Close} from '@material-ui/icons';
+import { tabValues } from '../../utils/appUtils';
 import { ReactComponent as PLSNavbarLogo } from '../../utils/images/pls_navbar_logo.svg';
 
 const useStyles = makeStyles((theme) => ({
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     top: 0,
     borderBottom: '1px solid #35353520',
     boxShadow: '0px 10px 15px #35353520',
+    zIndex: 999,
   },
   brand: {
     display: 'flex',
@@ -58,28 +59,6 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 22,
     fontWeight: 'bold',
   },
-  links: {
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
-    display: 'flex',
-    marginBottom: 2,
-    '& a': {
-      height: '100%',
-      display: 'flex',
-      alignItems: 'center',
-      marginLeft: 10,
-      marginBottom: 4,
-      transition: 'all .3s ease',
-    },
-    '& a:hover': {
-      color: theme.colors.secondary,
-      borderBottom: `4px solid ${theme.colors.secondary}`,
-    },
-    '& .active': {
-      fontWeight: 'bold',
-    },
-  },
   buttonCollapse: {
     [theme.breakpoints.up('sm')]: {
       display: 'none',
@@ -93,49 +72,50 @@ const useStyles = makeStyles((theme) => ({
   tabs: {
     width: '65%',
   },
+  tab: {
+    minWidth: 60,
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
   labelContainer: {
     paddingLeft: 0,
     paddingRight: 0,
     fontSize: "5px"
   },
-  collapseCategories: {
-    position: 'fixed',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    top: 60,
-    left: 'auto',
-    right: 0,
-    background: 'white',
-    zIndex: 1100,
-    boxShadow: '0px 10px 15px #35353520',
-    fontWeight: 'bold',
+  list: {
+    height: '100%',
     padding: 0,
-  },
-  dropdown: {
-    position: 'fixed',
-    width: '100%',
-    backgroundColor: 'white',
-    top: 60,
-    zIndex: 1100,
+    '& .active': {
+      fontWeight: 'bold',
+    },
   },
   listItem: {
     display: 'flex',
     justifyContent: 'center',
+    padding: 10,
   },
+  collapse: {
+    position: 'sticky',
+    width: '100%',
+    top: 60,
+    background: 'white',
+    height: 0,
+    overflow: 'hidden',
+    transition: 'height 500ms',
+    borderBottom: '1px solid #35353520',
+    zIndex: 1000,
+  },
+  open: {
+    height: 255,
+    boxShadow: '0px 10px 15px #35353520',
+  }
 }));
-
-const tabStyle = {
-  minWidth: 60,
-  paddingLeft: 0,
-  paddingRight: 0,
-};
 
 const NavBar = () => {
   const classes = useStyles();
-  const [value, setValue] = useState(window.location.pathname.split('/')[2].toLowerCase());
+  const valueOnLoad = window.location.pathname.split('/').length === 3 &&
+    window.location.pathname.split('/')[2].toLowerCase()
+  const [value, setValue] = useState(tabValues.find(value => value === valueOnLoad) || 'home');
   const [open, setMenuOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
@@ -144,8 +124,7 @@ const NavBar = () => {
 
   return (
     <>
-      {/* NavBar */}
-      <AppBar position="fixed" className={classes.appBar} color="transparent">
+      <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls" className={classes.brand}>
             <PLSNavbarLogo />
@@ -154,13 +133,11 @@ const NavBar = () => {
             </Hidden>
           </a>
         </div>
-
         <Hidden mdUp>
           <IconButton onClick={() => setMenuOpen(!open)}>
-            {open ? <CloseIcon /> : <MenuIcon />}
+            {open ? <Close /> : <Menu />}
           </IconButton>
         </Hidden>
-
         <Hidden smDown>
           <Tabs
             indicatorColor='primary'
@@ -169,20 +146,21 @@ const NavBar = () => {
             onChange={handleChange}
             variant="fullWidth"
           >
-            <Tab to='/home' value='home' component={NavLink} label="Home" style={tabStyle} />
-            <Tab to='/individual' value='individual' component={NavLink} label="Individual Services" style={tabStyle} />
-            <Tab to='/professional' value='professional'  component={NavLink} label="Professional Services" style={tabStyle} />
-            <Tab to='/business' value='business'  component={NavLink} label="Business Services" style={tabStyle} />
-            <Tab to='/test' value='test'  component={NavLink} label="Level Test" style={tabStyle} />
-            <Tab to='/contact' value='contact'  component={NavLink} label="Contact Form" style={tabStyle} />
+            <Tab to='/home' value='home' component={NavLink} label="Home" className={classes.tab} />
+            <Tab to='/individual' value='individual' component={NavLink} label="Individual Services" className={classes.tab} />
+            <Tab to='/professional' value='professional'  component={NavLink} label="Professional Services" className={classes.tab} />
+            <Tab to='/business' value='business'  component={NavLink} label="Business Services" className={classes.tab} />
+            <Tab to='/test' value='test'  component={NavLink} label="Level Test" className={classes.tab} />
+            <Tab to='/contact' value='contact'  component={NavLink} label="Contact Form" className={classes.tab} />
           </Tabs>
         </Hidden>
       </AppBar>
+
       <Hidden mdUp>
-        <Collapse in={open} >
-          <div tabIndex={0} role="button">
-            <List className = {classes.collapseCategories} >
-              <ListItem key="home" button divider onClick={()=>{
+        <div className={`${classes.collapse} ${open ? classes.open : ''}`}>
+          {/* <Collapse in={open}> */}
+            <List className={classes.list} >
+              <ListItem key="home" active={value === 'home'} button divider onClick={()=>{
                   setValue('home');
                   setMenuOpen(false);
                 }}
@@ -190,7 +168,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                   Home
               </ListItem>
-              <ListItem key={1} button divider onClick={()=>{
+              <ListItem key="individual" active={value === 'individual'} button divider onClick={()=>{
                   setValue('individual');
                   setMenuOpen(false);
                 }}
@@ -198,7 +176,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Individual Services
               </ListItem>
-              <ListItem key={2} button divider onClick={()=>{
+              <ListItem key="professional" active={value === 'professional'} button divider onClick={()=>{
                   setValue('professional');
                   setMenuOpen(false);
                 }}
@@ -206,7 +184,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Professional Services
               </ListItem>
-              <ListItem key={3} button divider onClick={()=>{
+              <ListItem key="business" active={value === 'business'} button divider onClick={()=>{
                   setValue('business');
                   setMenuOpen(false);
                 }}
@@ -214,7 +192,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Business Services
               </ListItem>
-              <ListItem key={4} button divider onClick={()=>{
+              <ListItem key="test" active={value === 'test'} button divider onClick={()=>{
                   setValue('test');
                   setMenuOpen(false);
                 }}
@@ -222,7 +200,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Level Test
               </ListItem>
-              <ListItem key={5} button onClick={()=>{
+              <ListItem key="contact" active={value === 'contact'} button onClick={()=>{
                   setValue('contact');
                   setMenuOpen(false);
                 }}
@@ -231,8 +209,8 @@ const NavBar = () => {
                 Contact Form
               </ListItem>
             </List>
-          </div>
-        </Collapse>
+          {/* </Collapse> */}
+        </div>
       </Hidden>
     </>
   )

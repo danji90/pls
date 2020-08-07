@@ -16,10 +16,9 @@ const useStyles = makeStyles({
     padding: 10,
   },
   brand: {
-    width: 300,
+    width: 340,
     padding: 10,
     '& a': {
-      textDecoration: 'none',
       color: 'inherit',
     },
   },
@@ -27,6 +26,12 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     fontWeight: 'bold',
+    textDecoration: 'none',
+    '& svg': {
+      height: 40,
+      width: 40,
+      padding: 10,
+    }
   },
   media:{
     padding: 10,
@@ -45,7 +50,7 @@ const Footer = (props) => {
     return (
       <footer className={classes.footer}>
         <div className={classes.brand}>
-          <a href="/pls" className={classes.brandLink}>
+          <a href="/pls/home" className={classes.brandLink}>
             <PLSNavbarLogo />
             Pete's Language Services
           </a>
