@@ -6,6 +6,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import portrait from '../../utils/images/pete.png';
 import divider from '../../utils/images/pls_divider.png';
 import chatting from '../../utils/images/chatting.svg';
+import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,13 +43,15 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     border: '5px solid #353535',
     borderRadius: '50%',
+    backgroundColor: 'rgb(249, 249, 249)',
   },
   mainImage: {
-    height: '75%',
+    height: '42%',
   },
   interImage: {
     position: 'absolute',
     top: -200,
+    left: 0,
     width: '100%',
     [theme.breakpoints.down('sm')]: {
       top: -100,
@@ -91,7 +94,8 @@ const Home = () => {
         <div id="home_title" className={classes.landingTitle}>
           <div className={classes.mainTitle}>
             <div className={classes.mainImageContainer}>
-              <img className={classes.mainImage} src={chatting} alt="chatting" ></img>
+              <PLSLogo className={classes.mainImage} />
+              {/* <img className={classes.mainImage} src={chatting} alt="chatting" ></img> */}
             </div>
             <h1>Pete's Language Services</h1>
           </div>
