@@ -14,6 +14,7 @@ import Footer from '../Footer/Footer';
 import sectionData from '../../utils/service_data.js';
 import './Main.css';
 import NavBar from '../NavBar/NavBar.js';
+import Individual from '../Individual/Individual.js';
 import { tabValues } from '../../utils/appUtils';
 
 const Main = () => {
@@ -36,27 +37,32 @@ const Main = () => {
           </Route>
           <Route path="/individual">
             <TabPanel index={1}>
-              Individual
+              <Individual />
+              <Footer />
             </TabPanel>
           </Route>
           <Route path="/professional">
             <TabPanel index={2}>
               Professional
+              <Footer />
             </TabPanel>
           </Route>
           <Route path="/business">
             <TabPanel index={3}>
               Business
+              <Footer />
             </TabPanel>
           </Route>
           <Route path="/test">
             <TabPanel index={4}>
               Level test
+              <Footer />
             </TabPanel>
           </Route>
           <Route path="/contact">
             <TabPanel index={5}>
               Contact Form
+              <Footer />
             </TabPanel>
           </Route>
           <Route exact path="/*">
