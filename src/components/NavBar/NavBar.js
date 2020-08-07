@@ -126,7 +126,7 @@ const NavBar = () => {
     <>
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
-          <a href="/" className={classes.brand}>
+          <a href="/pls" className={classes.brand}>
             <img src={logo} alt="pls-logo" />
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>
