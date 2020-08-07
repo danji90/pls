@@ -36,6 +36,12 @@ const useStyles = makeStyles({
   media:{
     padding: 10,
   },
+  iconButton: {
+    '& svg': {
+      width: 40,
+      height: 40,
+    },
+  },
   contact: {
     padding: '5px 0 5px 60px',
     '& p': {
@@ -74,6 +80,7 @@ const Footer = (props) => {
             href="https://www.facebook.com/marsh.peter"
             target="_blank"
             rel="noopener"
+            className={classes.iconButton}
             >
             <FacebookIcon />
           </IconButton>
@@ -81,6 +88,7 @@ const Footer = (props) => {
             href="https://www.linkedin.com/in/pete-marsh-hunn-7007a4129/"
             target="_blank"
             rel="noopener"
+            className={classes.iconButton}
             >
             <LinkedInIcon />
           </IconButton>
