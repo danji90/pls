@@ -26,6 +26,8 @@
       var segmentCount = 1;
 
       var l = window.location;
+      console.log(l.pathname.split('/'));
+      console.log(l.pathname.split('/').slice(0, 1));
       console.log(l.pathname.split('/').slice(0, 1 + segmentCount).join('/'));
       l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
