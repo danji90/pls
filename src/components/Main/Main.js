@@ -26,7 +26,7 @@ const Main = () => {
             <Redirect to="/home" />
           </Route>
           <Route exact path="/home">
-            <LandingPage />
+            {/* <LandingPage /> */}
             <TabPanel index={0} >
               <Home />
               <Footer />

@@ -13,11 +13,7 @@ import {
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import { moveToSection } from '../../utils/appUtils.js';
-import services from '../../utils/service_data.js';
 import { ReactComponent as PLSNavbarLogo } from '../../utils/images/pls_navbar_logo.svg';
-import Dropdown from '../Dropdown/Dropdown';
-import './NavBar.css'
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -139,7 +135,7 @@ const tabStyle = {
 
 const NavBar = () => {
   const classes = useStyles();
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState(window.location.pathname.split('/')[2].toLowerCase());
   const [open, setMenuOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
@@ -173,12 +169,12 @@ const NavBar = () => {
             onChange={handleChange}
             variant="fullWidth"
           >
-            <Tab to='/home' component={NavLink} label="Home" style={tabStyle} />
-            <Tab to='/individual' component={NavLink} label="Individual Services" style={tabStyle} />
-            <Tab to='/professional' component={NavLink} label="Professional Services" style={tabStyle} />
-            <Tab to='/business' component={NavLink} label="Business Services" style={tabStyle} />
-            <Tab to='/test' component={NavLink} label="Level Test" style={tabStyle} />
-            <Tab to='/contact' component={NavLink} label="Contact Form" style={tabStyle} />
+            <Tab to='/home' value='home' component={NavLink} label="Home" style={tabStyle} />
+            <Tab to='/individual' value='individual' component={NavLink} label="Individual Services" style={tabStyle} />
+            <Tab to='/professional' value='professional'  component={NavLink} label="Professional Services" style={tabStyle} />
+            <Tab to='/business' value='business'  component={NavLink} label="Business Services" style={tabStyle} />
+            <Tab to='/test' value='test'  component={NavLink} label="Level Test" style={tabStyle} />
+            <Tab to='/contact' value='contact'  component={NavLink} label="Contact Form" style={tabStyle} />
           </Tabs>
         </Hidden>
       </AppBar>
@@ -186,7 +182,8 @@ const NavBar = () => {
         <Collapse in={open} >
           <div tabIndex={0} role="button">
             <List className = {classes.collapseCategories} >
-              <ListItem key={0} button divider onClick={()=>{
+              <ListItem key="home" button divider onClick={()=>{
+                  setValue('home');
                   setMenuOpen(false);
                 }}
                 to='/home' component={NavLink}
@@ -194,6 +191,7 @@ const NavBar = () => {
                   Home
               </ListItem>
               <ListItem key={1} button divider onClick={()=>{
+                  setValue('individual');
                   setMenuOpen(false);
                 }}
                 to='/individual' component={NavLink}
@@ -201,6 +199,7 @@ const NavBar = () => {
                 Individual Services
               </ListItem>
               <ListItem key={2} button divider onClick={()=>{
+                  setValue('professional');
                   setMenuOpen(false);
                 }}
                 to='/professional' component={NavLink}
@@ -208,6 +207,7 @@ const NavBar = () => {
                 Professional Services
               </ListItem>
               <ListItem key={3} button divider onClick={()=>{
+                  setValue('business');
                   setMenuOpen(false);
                 }}
                 to='/business' component={NavLink}
@@ -215,6 +215,7 @@ const NavBar = () => {
                 Business Services
               </ListItem>
               <ListItem key={4} button divider onClick={()=>{
+                  setValue('test');
                   setMenuOpen(false);
                 }}
                 to='/test' component={NavLink}
@@ -222,6 +223,7 @@ const NavBar = () => {
                 Level Test
               </ListItem>
               <ListItem key={5} button onClick={()=>{
+                  setValue('contact');
                   setMenuOpen(false);
                 }}
                 to='/contact' component={NavLink}
