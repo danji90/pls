@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/pls/static/css/main.d572b6a3.chunk.css",
-    "main.js": "/pls/static/js/main.9fd51220.chunk.js",
-    "main.js.map": "/pls/static/js/main.9fd51220.chunk.js.map",
+    "main.js": "/pls/static/js/main.c0a92776.chunk.js",
+    "main.js.map": "/pls/static/js/main.c0a92776.chunk.js.map",
     "runtime-main.js": "/pls/static/js/runtime-main.e4849d10.js",
     "runtime-main.js.map": "/pls/static/js/runtime-main.e4849d10.js.map",
     "static/js/2.7ce8bacc.chunk.js": "/pls/static/js/2.7ce8bacc.chunk.js",
     "static/js/2.7ce8bacc.chunk.js.map": "/pls/static/js/2.7ce8bacc.chunk.js.map",
     "index.html": "/pls/index.html",
-    "precache-manifest.f9815296d6333af20650147f665dd1d2.js": "/pls/precache-manifest.f9815296d6333af20650147f665dd1d2.js",
+    "precache-manifest.bdcf0811ddba8090921952d7d6ba6311.js": "/pls/precache-manifest.bdcf0811ddba8090921952d7d6ba6311.js",
     "service-worker.js": "/pls/service-worker.js",
     "static/css/main.d572b6a3.chunk.css.map": "/pls/static/css/main.d572b6a3.chunk.css.map",
     "static/media/chatting.svg": "/pls/static/media/chatting.dad2a21b.svg",
@@ -22,6 +22,6 @@
     "static/js/runtime-main.e4849d10.js",
     "static/js/2.7ce8bacc.chunk.js",
     "static/css/main.d572b6a3.chunk.css",
-    "static/js/main.9fd51220.chunk.js"
+    "static/js/main.c0a92776.chunk.js"
   ]
 }
