@@ -56,7 +56,7 @@ const Footer = (props) => {
     return (
       <footer className={classes.footer}>
         <div className={classes.brand}>
-          <a href="/pls/home" className={classes.brandLink}>
+          <a href="/pls" className={classes.brandLink}>
             <img src={logo} alt="pls-logo" />
             Pete's Language Services
           </a>
