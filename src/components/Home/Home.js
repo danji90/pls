@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   bioBox: {
-    padding: '80px 50px 50px',
+    padding: '120px 50px 50px',
   },
   bioFlex: {
     display: 'flex',

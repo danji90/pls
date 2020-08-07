@@ -5,7 +5,7 @@ import IconButton from '@material-ui/core/IconButton';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
-import { ReactComponent as PLSNavbarLogo } from '../../utils/images/pls_navbar_logo.svg';
+import logo from '../../utils/images/pls_navbar_logo.png';
 
 const useStyles = makeStyles({
   footer: {
@@ -27,7 +27,7 @@ const useStyles = makeStyles({
     alignItems: 'center',
     fontWeight: 'bold',
     textDecoration: 'none',
-    '& svg': {
+    '& img': {
       height: 40,
       width: 40,
       padding: 10,
@@ -57,7 +57,7 @@ const Footer = (props) => {
       <footer className={classes.footer}>
         <div className={classes.brand}>
           <a href="/pls/home" className={classes.brandLink}>
-            <PLSNavbarLogo />
+            <img src={logo} alt="pls-logo" />
             Pete's Language Services
           </a>
           <div className={classes.contact}>

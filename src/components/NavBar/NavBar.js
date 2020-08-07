@@ -13,7 +13,7 @@ import {
 import IconButton from '@material-ui/core/IconButton';
 import { Menu, Close} from '@material-ui/icons';
 import { tabValues } from '../../utils/appUtils';
-import { ReactComponent as PLSNavbarLogo } from '../../utils/images/pls_navbar_logo.svg';
+import logo from '../../utils/images/pls_navbar_logo.png';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -39,10 +39,10 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       color: 'inherit',
     },
-    '& svg': {
-    padding: 5,
-    height: 45,
-    width: 45,
+    '& img': {
+      padding: 5,
+      height: 45,
+      width: 45,
     },
   },
   logo: {
@@ -127,7 +127,7 @@ const NavBar = () => {
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls" className={classes.brand}>
-            <PLSNavbarLogo />
+            <img src={logo} alt="pls-logo" />
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>
             </Hidden>

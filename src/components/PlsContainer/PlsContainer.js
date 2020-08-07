@@ -9,7 +9,6 @@ const useStyles = makeStyles({
   landingContainer: {
     position: 'relative',
     backgroundColor: (props) => props.backgroundColor,
-    padding: '40px 0 40px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
