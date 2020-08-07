@@ -10,6 +10,7 @@ import TabPanel from '../TabPanel/TabPanel';
 import Home from '../Home/Home';
 import Service from '../Service/Service';
 import LandingPage from '../LandingPage/LandingPage';
+import Footer from '../Footer/Footer';
 import sectionData from '../../utils/service_data.js';
 import './Main.css';
 import NavBar from '../NavBar/NavBar.js';
@@ -28,6 +29,7 @@ const Main = () => {
             <LandingPage />
             <TabPanel index={0} >
               <Home />
+              <Footer />
             </TabPanel>
           </Route>
           <Route path="/individual">

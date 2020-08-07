@@ -34,11 +34,17 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-evenly',
     flexWrap: 'wrap',
   },
+  mainImageContainer: {
+    height: 250,
+    width: 250,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: '5px solid #353535',
+    borderRadius: '50%',
+  },
   mainImage: {
-    height: 200,
-    [theme.breakpoints.down('sm')]: {
-      height: 200,
-    },
+    height: '75%',
   },
   interImage: {
     position: 'absolute',
@@ -52,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   bioContainer: {
+    width: '100%',
+  },
+  bioBox: {
     padding: '80px 50px 50px',
   },
   bioFlex: {
@@ -59,12 +68,19 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'wrap',
   },
   bioTextContainer: {
-    padding: 20,
+    padding: 30,
     flex: 2,
   },
   bioImageContainer: {
-    flex: 1,
-  }
+    height: 250,
+    width: 250,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    border: '5px solid #353535',
+    borderRadius: '50%',
+    overflow: 'hidden',
+  },
 }));
 
 const Home = () => {
@@ -74,7 +90,9 @@ const Home = () => {
       <PlsContainer>
         <div id="home_title" className={classes.landingTitle}>
           <div className={classes.mainTitle}>
-            <img className={classes.mainImage} src={chatting} alt="chatting" ></img>
+            <div className={classes.mainImageContainer}>
+              <img className={classes.mainImage} src={chatting} alt="chatting" ></img>
+            </div>
             <h1>Pete's Language Services</h1>
           </div>
           <h2>"Help yourself to the biscuits", 'Which bay does the Bournemouth bus leave from?", "What size are you?"  Most people nowadays can understand many things in English but how good is your command of English when it comes to speaking? We constantly need to practise and improve our English, whether it's for travel, to communicate with your son's girlfriend, or to get language certification for studies or for a job. Pete's Language Services is here to help you!</h2>
@@ -83,16 +101,18 @@ const Home = () => {
       <PlsContainer flexDirection="column" backgroundColor="#f9f9f9">
         <img className={classes.interImage} src={divider} alt="divider" ></img>
         <div id="home" className={classes.bioContainer}>
-          <h1>But who's Pete?</h1>
-          <div className={classes.bioFlex}>
-            <div className={classes.bioImageContainer}>
-              <img className="home-portrait" src={portrait} alt='source not found'></img>
-            </div>
-            <div className={classes.bioTextContainer}>
-              <span>
-                Hi there! I'm Pete Marsh-Hunn and I’m originally from Bournemouth, UK. After some years of working as an English teacher in Germany, Morocco and Saudi Arabia, I moved to Bolzano/Bozen in the Dolomites region of Northern Italy where I’ve been living for over 30 years. With my extensive English-teaching experience and my very people-centred, friendly approach I think I can help you in many different ways to improve your English. Click on whichever of the above pages that interest you most.
-              </span>
-              <div className="home-list">
+          <div className={classes.bioBox}>
+            <h1>But who's Pete?</h1>
+            <div className={classes.bioFlex}>
+              <div className={classes.bioImageContainer}>
+                <img src={portrait} alt='source not found'></img>
+              </div>
+              <div className={classes.bioTextContainer}>
+                <span>
+                  Hi there! I'm Pete Marsh-Hunn and I’m originally from Bournemouth, UK. After some years of working as an English teacher in Germany, Morocco and Saudi Arabia, I moved to Bolzano/Bozen in the Dolomites region of Northern Italy where I’ve been living for over 30 years. With my extensive English-teaching experience and my very people-centred, friendly approach I think I can help you in many different ways to improve your English. Click on whichever of the above pages that interest you most.
+                </span>
+              </div>
+              <div>
                 <p>My credentials:</p>
                 <ul>
                   <li>English native-speaker from the UK.</li>

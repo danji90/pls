@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
-    width: '30%',
+    width: '40%',
     height: '100%',
     '& a': {
       width: '100%',
@@ -60,7 +60,7 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: 0,
     },
     fontSize: 22,
-    fontWeight: 500,
+    fontWeight: 'bold',
   },
   links: {
     [theme.breakpoints.down('xs')]: {
@@ -152,7 +152,7 @@ const NavBar = () => {
       <AppBar position="fixed" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls" className={classes.brand}>
-            <PLSNavbarLogo className="navbar-logo" />
+            <PLSNavbarLogo />
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>
             </Hidden>
