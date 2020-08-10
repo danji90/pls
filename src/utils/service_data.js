@@ -1,3 +1,5 @@
+import conversation_1 from './images/study_group2.jpg';
+
 export const sectionData = [
     {
         // English Conversation
@@ -25,7 +27,10 @@ export const sectionData = [
                 '€38,00 per hour (of 60 minutes) for 1 person, €42,00 for 2 people, €45,00 for 3 or more people. Minimum 10 lessons',
                 'Plus travelling expenses for lessons outside Bolzano/Bozen'
             ]
-        }
+        },
+        images: [
+            conversation_1,
+        ]
     },
     // English for the Office/Work
     {

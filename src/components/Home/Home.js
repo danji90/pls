@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     justifyContent: 'center',
     padding: 10,
-    paddingBottom: 100,
     width: '100%',
     margin: 50,
     '& h1': {
@@ -48,19 +47,11 @@ const useStyles = makeStyles((theme) => ({
     height: '42%',
   },
   interImage: {
-    position: 'absolute',
-    top: -200,
-    left: 0,
     width: '100%',
-    [theme.breakpoints.down('sm')]: {
-      top: -100,
-    },
-    [theme.breakpoints.down('xs')]: {
-      top: -50,
-    },
   },
   bioContainer: {
     width: '100%',
+    backgroundColor: "#f9f9f9",
   },
   bioBox: {
     padding: '120px 50px 50px',
@@ -107,7 +98,7 @@ const Home = () => {
           <h2>"Help yourself to the biscuits", 'Which bay does the Bournemouth bus leave from?", "What size are you?"  Most people nowadays can understand many things in English but how good is your command of English when it comes to speaking? We constantly need to practise and improve our English, whether it's for travel, to communicate with your son's girlfriend, or to get language certification for studies or for a job. Pete's Language Services is here to help you!</h2>
         </div>
       </PlsContainer>
-      <PlsContainer flexDirection="column" backgroundColor="#f9f9f9">
+      <PlsContainer flexDirection="column">
         <img className={classes.interImage} src={divider} alt="divider" ></img>
         <div id="home" className={classes.bioContainer}>
           <div className={classes.bioBox}>

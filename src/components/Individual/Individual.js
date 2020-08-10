@@ -14,24 +14,21 @@ const individualServices = serviceData.filter((service) => service.category === 
 const useStyles = makeStyles((theme) => ({
   landingTitle: {
     width: '100%',
-    height: 200,
-    backgroundImage: `url(${desk})`,
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat, repeat',
+    // backgroundImage: `url(${desk})`,
+    // backgroundPosition: 'center',
+    // backgroundSize: 'cover',
+    // backgroundRepeat: 'no-repeat, repeat',
+    '& h1': {
+      padding: '40px 20px',
+    },
   },
   interImage: {
-    position: 'absolute',
-    top: -200,
-    left: 0,
     width: '100%',
-    [theme.breakpoints.down('sm')]: {
-      top: -100,
-    },
-    [theme.breakpoints.down('xs')]: {
-      top: -50,
-    },
   },
+  servicesContainer: {
+    width: '100%',
+    backgroundColor: "#f9f9f9",
+  }
 }));
 
 const Individual = () => {
@@ -43,15 +40,14 @@ const Individual = () => {
           <h1>Individual services</h1>
         </div>
       </PlsContainer>
-      <PlsContainer flexDirection="column" backgroundColor="#f9f9f9">
+      <PlsContainer flexDirection="column">
         <img className={classes.interImage} src={divider} alt="divider" ></img>
-        <div>
+        <div className={classes.servicesContainer}>
           {
             individualServices.map((service) => <Service key={service.id} data={service}/>)
           }
         </div>
       </PlsContainer>
-      
     </>
   );
 }

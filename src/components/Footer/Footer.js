@@ -62,8 +62,8 @@ const Footer = (props) => {
           </a>
           <div className={classes.contact}>
             <p>
-              <span>Via Castel Mareccio 2</span>
-              <span>39100 Bolzano</span>
+              <span>Via Castel Mareccio/Maretschgasse 2</span>
+              <span>39100 Bolzano/Bozen</span>
               <span>Italy</span>
             </p>
             <p>
