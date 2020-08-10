@@ -18,7 +18,6 @@ import Individual from '../Individual/Individual.js';
 import { tabValues } from '../../utils/appUtils';
 
 const Main = () => {
-  console.log(window.location);
   return (
     <>
       <Router basename="/">

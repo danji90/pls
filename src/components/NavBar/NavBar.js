@@ -160,7 +160,7 @@ const NavBar = () => {
         <div className={`${classes.collapse} ${open ? classes.open : ''}`}>
           {/* <Collapse in={open}> */}
             <List className={classes.list} >
-              <ListItem key="home" active={value === 'home'} button divider onClick={()=>{
+              <ListItem key="home" active={(value === 'home').toString()} button divider onClick={()=>{
                   setValue('home');
                   setMenuOpen(false);
                 }}
@@ -168,7 +168,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                   Home
               </ListItem>
-              <ListItem key="individual" active={value === 'individual'} button divider onClick={()=>{
+              <ListItem key="individual" active={(value === 'individual').toString()} button divider onClick={()=>{
                   setValue('individual');
                   setMenuOpen(false);
                 }}
@@ -176,7 +176,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Individual Services
               </ListItem>
-              <ListItem key="professional" active={value === 'professional'} button divider onClick={()=>{
+              <ListItem key="professional" active={(value === 'professional').toString()} button divider onClick={()=>{
                   setValue('professional');
                   setMenuOpen(false);
                 }}
@@ -184,7 +184,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Professional Services
               </ListItem>
-              <ListItem key="business" active={value === 'business'} button divider onClick={()=>{
+              <ListItem key="business" active={(value === 'business').toString()} button divider onClick={()=>{
                   setValue('business');
                   setMenuOpen(false);
                 }}
@@ -192,7 +192,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Business Services
               </ListItem>
-              <ListItem key="test" active={value === 'test'} button divider onClick={()=>{
+              <ListItem key="test" active={(value === 'test').toString()} button divider onClick={()=>{
                   setValue('test');
                   setMenuOpen(false);
                 }}
@@ -200,7 +200,7 @@ const NavBar = () => {
                 className={classes.listItem}>
                 Level Test
               </ListItem>
-              <ListItem key="contact" active={value === 'contact'} button onClick={()=>{
+              <ListItem key="contact" active={(value === 'contact').toString()} button onClick={()=>{
                   setValue('contact');
                   setMenuOpen(false);
                 }}

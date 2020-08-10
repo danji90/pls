@@ -1,11 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import PlsContainer from '../PlsContainer/PlsContainer'
-import LandingPage from '../LandingPage/LandingPage';
+import Service from '../Service/Service';
 
 import divider from '../../utils/images/pls_divider.png';
 import desk from '../../utils/images/desk3.jpg';
-import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg'
+import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg';
+
+import serviceData from '../../utils/service_data.js'; 
+
+const individualServices = serviceData.filter((service) => service.category === 'individual')
 
 const useStyles = makeStyles((theme) => ({
   landingTitle: {
@@ -41,7 +45,11 @@ const Individual = () => {
       </PlsContainer>
       <PlsContainer flexDirection="column" backgroundColor="#f9f9f9">
         <img className={classes.interImage} src={divider} alt="divider" ></img>
-        <div style={{height: 800}}></div>
+        <div>
+          {
+            individualServices.map((service) => <Service key={service.id} data={service}/>)
+          }
+        </div>
       </PlsContainer>
       
     </>
