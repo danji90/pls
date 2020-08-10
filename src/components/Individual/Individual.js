@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
   landingTitle: {
     width: '100%',
     // backgroundImage: `url(${desk})`,
-    // backgroundPosition: 'center',
+    // backgroundPosition: 'center', 
     // backgroundSize: 'cover',
     // backgroundRepeat: 'no-repeat, repeat',
     '& h1': {

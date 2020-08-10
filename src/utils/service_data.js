@@ -8,7 +8,7 @@ export const sectionData = [
         title: 'English Conversation',
         content: {
             paragraphs: [
-                'Nearly everybody has done English courses but most people have few opportunities to practise/use their English and so, over the years, their English gets ‚rusty‘. The best way to improve your English is to regularly use it in a conversational context, talking about things that interest you: travel, current affairs, culture, family and friends, hobbies, music and art, etc. My job is to encourage you to speak, to introduce new words and expressions suitable to your level, to point out mistakes and praise you when you use nice new vocabulary. Input for conversation will be from our own lives and experience, from books, from newspapers/magazines, and from the internet, using short video clips.'
+                'Nearly everybody has done English courses but most people have few opportunities to practise/use their English and so, over the years, their English gets "rusty". The best way to improve your English is to regularly use it in a conversational context, talking about things that interest you: travel, current affairs, culture, family and friends, hobbies, music and art, etc. My job is to encourage you to speak, to introduce new words and expressions suitable to your level, to point out mistakes and praise you when you use nice new vocabulary. Input for conversation will be from our own lives and experience, from books, from newspapers/magazines, and from the internet, using short video clips.'
             ]
         },
         format: {

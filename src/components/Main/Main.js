@@ -21,7 +21,7 @@ const Main = () => {
   return (
     <>
       <Router basename="/">
-      {/* <Router> */}
+      {/* Router */}
       <div>
         <NavBar />
         <Switch>

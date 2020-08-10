@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     display: 'flex',
     justifyContent: 'center',
-    padding: 10,
+    padding: 20,
   },
   collapse: {
     position: 'sticky',
@@ -106,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
   },
   open: {
-    height: 255,
+    height: 375,
     boxShadow: '0px 10px 15px #35353520',
   }
 }));
