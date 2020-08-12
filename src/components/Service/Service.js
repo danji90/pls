@@ -6,6 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   service: {
     padding: '40px 30px',
+    marginBottom: 100,
+    backgroundColor: "#f9f9f9",
   },
   serviceMain: {
     display: 'flex',
@@ -68,7 +70,6 @@ const Service = (props) => {
           </div>
           {data.images && <><div className={classes.serviceImages}><img src={data.images[0]} alt="service image"></img></div></>}
         </div>
-        
       </div>
     );
   }

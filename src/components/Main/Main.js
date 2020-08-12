@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import { makeStyles } from '@material-ui/core';
 
 import TabPanel from '../TabPanel/TabPanel';
 import Home from '../Home/Home';
@@ -16,13 +17,24 @@ import './Main.css';
 import NavBar from '../NavBar/NavBar.js';
 import Individual from '../Individual/Individual.js';
 import { tabValues } from '../../utils/appUtils';
+import conversation_1 from '../../utils/images/study_group2.jpg';
+
+const useStyles = makeStyles({
+  individualBackground: {
+    position: 'fixed',
+    width: '100%',
+    top: 0,
+    zIndex: 0,
+  },
+});
 
 const Main = () => {
+  const classes = useStyles();
   return (
     <>
       <Router basename="/">
       {/* Router */}
-      <div>
+      <div style={{ position: 'relative' }}>
         <NavBar />
         <Switch>
           <Route exact path="/">
@@ -31,14 +43,15 @@ const Main = () => {
           <Route exact path="/home">
             <TabPanel index={0} >
               <Home />
-              <Footer />
             </TabPanel>
+            <Footer />
           </Route>
           <Route path="/individual">
-            <TabPanel index={1}>
+            <img src={conversation_1} alt='individual' className={classes.individualBackground}></img>
+            <TabPanel index={1} propClasses={{}}>
               <Individual />
-              <Footer />
             </TabPanel>
+            <Footer />
           </Route>
           <Route path="/professional">
             <TabPanel index={2}>

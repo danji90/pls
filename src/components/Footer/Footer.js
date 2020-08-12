@@ -9,11 +9,16 @@ import logo from '../../utils/images/pls_navbar_logo.png';
 
 const useStyles = makeStyles({
   footer: {
+    position: 'absolute',
+    bottom: 0,
+    width: '100%',
     minHeight: 50,
     display: 'flex',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
     padding: 10,
+    backgroundColor: '#fec44f',
+    zIndex: 999,
   },
   brand: {
     width: 340,

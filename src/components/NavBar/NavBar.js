@@ -101,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     background: 'white',
     height: 0,
     overflow: 'hidden',
-    transition: 'height 500ms',
+    transition: 'height 300ms',
     borderBottom: '1px solid #35353520',
     zIndex: 1000,
   },

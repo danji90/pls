@@ -5,6 +5,7 @@ import Service from '../Service/Service';
 
 import divider from '../../utils/images/pls_divider.png';
 import desk from '../../utils/images/desk3.jpg';
+import conversation_1 from '../../utils/images/study_group2.jpg';
 import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg';
 
 import serviceData from '../../utils/service_data.js'; 
@@ -12,6 +13,14 @@ import serviceData from '../../utils/service_data.js';
 const individualServices = serviceData.filter((service) => service.category === 'individual')
 
 const useStyles = makeStyles((theme) => ({
+  image: {
+    position: 'absolute',
+    width: '100%',
+    backgroundImage: `url(${conversation_1})`,
+    backgroundPosition: 'center', 
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat, repeat',
+  },
   landingTitle: {
     width: '100%',
     // backgroundImage: `url(${desk})`,
@@ -27,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
   },
   servicesContainer: {
     width: '100%',
-    backgroundColor: "#f9f9f9",
   }
 }));
 
@@ -43,9 +51,7 @@ const Individual = () => {
       <PlsContainer flexDirection="column">
         <img className={classes.interImage} src={divider} alt="divider" ></img>
         <div className={classes.servicesContainer}>
-          {
-            individualServices.map((service) => <Service key={service.id} data={service}/>)
-          }
+          {individualServices.map((service) => <Service key={service.id} data={service}/>)}
         </div>
       </PlsContainer>
     </>

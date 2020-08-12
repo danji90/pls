@@ -12,14 +12,15 @@ const useStyles = makeStyles({
 });
 
 const TabPanel = (props) => {
-    const { children, index } = props;
+    const { children, index, propClasses } = props;
     const classes = useStyles(props);
     return (
       <div
         role="tabpanel"
         id={`tabpanel-${index}`}
         aria-labelledby={`tab-${index}`}
-        className={classes.tabPanel}
+        className={propClasses || classes.tabPanel}
+        style={{paddingBottom: 350}}
       >
         {
           <Box p={3}>
