@@ -4,7 +4,7 @@ import PlsContainer from '../PlsContainer/PlsContainer'
 import LandingPage from '../LandingPage/LandingPage';
 
 import portrait from '../../utils/images/pete.png';
-import divider from '../../utils/images/pls_divider.png';
+import divider from '../../utils/images/pls_divider_top.png';
 import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg'
 
 
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "#f9f9f9",
   },
   bioBox: {
-    padding: '120px 50px 50px',
+    padding: '50px 50px 50px',
   },
   bioFlex: {
     display: 'flex',
@@ -75,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
     border: '5px solid #353535',
     borderRadius: '50%',
     marginRight: 30,
+    marginBottom: 50,
     overflow: 'hidden',
   },
   bioCredentials: {

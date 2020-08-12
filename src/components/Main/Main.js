@@ -20,12 +20,7 @@ import { tabValues } from '../../utils/appUtils';
 import conversation_1 from '../../utils/images/study_group2.jpg';
 
 const useStyles = makeStyles({
-  individualBackground: {
-    position: 'fixed',
-    width: '100%',
-    top: 0,
-    zIndex: 0,
-  },
+  
 });
 
 const Main = () => {
@@ -47,8 +42,7 @@ const Main = () => {
             <Footer />
           </Route>
           <Route path="/individual">
-            <img src={conversation_1} alt='individual' className={classes.individualBackground}></img>
-            <TabPanel index={1} propClasses={{}}>
+            <TabPanel index={1} propClasses={{}} backgroundImage={conversation_1}>
               <Individual />
             </TabPanel>
             <Footer />

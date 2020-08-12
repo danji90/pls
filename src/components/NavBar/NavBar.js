@@ -39,17 +39,15 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
       color: 'inherit',
     },
-    '& img': {
-      padding: 5,
-      height: 45,
-      width: 45,
-    },
   },
   logo: {
-    [theme.breakpoints.down('xs')]: {
-      width: 120,
-    },
-    width: 145,
+    padding: 5,
+    width: '45px',
+    height: '45px',
+    '&:hover': {
+      width: '48px',
+      height: '48px',
+    }
   },
   title: {
     [theme.breakpoints.down('sm')]: {
@@ -108,7 +106,7 @@ const useStyles = makeStyles((theme) => ({
   open: {
     height: 375,
     boxShadow: '0px 10px 15px #35353520',
-  }
+  },
 }));
 
 const NavBar = () => {
@@ -127,7 +125,7 @@ const NavBar = () => {
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls/" className={classes.brand}>
-            <img src={logo} alt="pls-logo" />
+            <img src={logo} alt="pls-logo" className={classes.logo}/>
             <Hidden only='xs'>
               <div className={classes.title}>Pete's Language Services</div>
             </Hidden>

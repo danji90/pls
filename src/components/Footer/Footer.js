@@ -16,7 +16,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    padding: 10,
     backgroundColor: '#fec44f',
     zIndex: 999,
   },
