@@ -92,16 +92,17 @@ const Home = () => {
             <div className={classes.mainImageContainer}>
               <PLSLogo className={classes.mainImage} />
             </div>
-            <h1>Pete's Language Services</h1>
+            <h1>Pete&apos;s Language Services</h1>
           </div>
           <h2>
-            "Help yourself to the biscuits", 'Which bay does the Bournemouth bus
-            leave from?", "What size are you?" Most people nowadays can
-            understand many things in English but how good is your command of
-            English when it comes to speaking? We constantly need to practise
-            and improve our English, whether it's for travel, to communicate
-            with your son's girlfriend, or to get language certification for
-            studies or for a job. Pete's Language Services is here to help you!
+            &quot;Help yourself to the biscuits&quot;, &quot;Which bay does the
+            Bournemouth bus leave from?&quot;, &quot;What size are you?&quot;
+            Most people nowadays can understand many things in English but how
+            good is your command of English when it comes to speaking? We
+            constantly need to practise and improve our English, whether
+            it&apos;s for travel, to communicate with your son&apos;s
+            girlfriend, or to get language certification for studies or for a
+            job. Pete&apos;s Language Services is here to help you!
           </h2>
         </div>
       </PlsContainer>
@@ -109,14 +110,14 @@ const Home = () => {
         <img className={classes.interImage} src={divider} alt="divider" />
         <div id="home" className={classes.bioContainer}>
           <div className={classes.bioBox}>
-            <h1>But who's Pete?</h1>
+            <h1>But who&apos;s Pete?</h1>
             <div className={classes.bioFlex}>
               <div className={classes.bioImageContainer}>
                 <img src={portrait} alt="source not found" />
               </div>
               <div className={classes.bioTextContainer}>
                 <span>
-                  Hi there! I'm Pete Marsh-Hunn and I’m originally from
+                  Hi there! I&apos;m Pete Marsh-Hunn and I’m originally from
                   Bournemouth, UK. After some years of working as an English
                   teacher in Germany, Morocco and Saudi Arabia, I moved to
                   Bolzano/Bozen in the Dolomites region of Northern Italy where

@@ -16,13 +16,14 @@
     "react-dom": "^16.13.1",
     "react-render-html": "^0.6.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.0",
+    "react-scripts": "3.4.1",
     "uuid": "^8.3.1"
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
+    "eslint": "^6.6.0",
     "eslint-config-airbnb": "18.2.0",
     "eslint-config-prettier": "6.12.0",
+    "eslint-import-resolver-webpack": "0.12.2",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-jsx-a11y": "6.3.1",
     "eslint-plugin-prettier": "3.1.4",
@@ -75,6 +76,7 @@
       "prettier/prettier": "error"
     },
     "settings": {
+      "import/resolver": "webpack",
       "react": {
         "version": "detect"
       }

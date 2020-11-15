@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -55,14 +54,14 @@ const useStyles = makeStyles({
   },
 });
 
-const Footer = props => {
-  const classes = useStyles(props);
+const Footer = () => {
+  const classes = useStyles();
   return (
     <footer className={classes.footer}>
       <div className={classes.brand}>
         <a href="/pls/" className={classes.brandLink}>
           <img src={logo} alt="pls-logo" />
-          Pete&aposs Language Services
+          Pete&apos;s Language Services
         </a>
         <div className={classes.contact}>
           <p>

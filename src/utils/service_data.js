@@ -2,6 +2,8 @@ import conversation from './images/conversation2.jpg';
 import examPrep from './images/examPrep.jpg';
 import trekAbrruzzo from './images/abruzzo_trek.jpg';
 import trekSchluderns from './images/schluderns_trek.png';
+import workshop from './images/workshop2.jpg';
+import presentation from './images/presentation.jpg';
 
 export const sectionData = [
   {
@@ -162,6 +164,9 @@ export const sectionData = [
         '€60,00 per hour (of 60 minutes) for the group, plus travelling expenses for lessons outside Bolzano/Bozen.',
       ],
     },
+    images: {
+      mainImage: workshop,
+    },
   },
   // Translations/Proof-reading/Presentations
   {
@@ -178,6 +183,9 @@ export const sectionData = [
         'Send me details of what you want translated/proof-read and I will give you an estimate.  Here’s the contact form',
       ],
       links: [],
+    },
+    images: {
+      mainImage: presentation,
     },
   },
   // English and Walking/Trekking

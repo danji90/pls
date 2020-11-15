@@ -122,7 +122,7 @@ const NavBar = () => {
           <a href="/pls/" className={classes.brand}>
             <img src={logo} alt="pls-logo" className={classes.logo} />
             <Hidden only="xs">
-              <div className={classes.title}>Pete's Language Services</div>
+              <div className={classes.title}>Pete&apos;s Language Services</div>
             </Hidden>
           </a>
         </div>

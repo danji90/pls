@@ -1,8 +1,7 @@
+/* eslint-disable react/no-unused-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles({
   landingContainer: {
@@ -44,13 +43,7 @@ const useStyles = makeStyles({
 });
 
 const PlsContainer = props => {
-  const {
-    children,
-    backgroundColor,
-    topSlice,
-    bottomSlice,
-    orientation,
-  } = props;
+  const { children, topSlice, bottomSlice } = props;
   const classes = useStyles(props);
 
   return (

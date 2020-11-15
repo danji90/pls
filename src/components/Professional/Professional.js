@@ -6,7 +6,7 @@ import Service from '../Service/Service';
 import serviceData from '../../utils/service_data';
 
 const individualServices = serviceData.filter(
-  service => service.category === 'individual',
+  service => service.category === 'professional',
 );
 
 const useStyles = makeStyles(() => ({
@@ -25,13 +25,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Individual = () => {
+const Professional = () => {
   const classes = useStyles();
   return (
     <>
       <PlsContainer>
         <div className={classes.landingTitle}>
-          <h1>Individual services</h1>
+          <h1>Professional services</h1>
         </div>
       </PlsContainer>
       <PlsContainer flexDirection="column">
@@ -45,4 +45,4 @@ const Individual = () => {
   );
 };
 
-export default Individual;
+export default Professional;

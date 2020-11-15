@@ -13,7 +13,13 @@ import dividerBottomOdd from '../../utils/images/pls_divider_bottom_odd.png';
 const useStyles = makeStyles(theme => ({
   service: {
     padding: '0 30px',
+    marginTop: 40,
     backgroundColor: '#f9f9f9',
+  },
+  serviceTitle: {
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
+    },
   },
   serviceMain: {
     display: 'flex',
@@ -66,7 +72,7 @@ const Service = props => {
       />
       <div id={data.id} className={classes.service}>
         <Container>
-          <h1>{data.title}</h1>
+          <h1 className={classes.serviceTitle}>{data.title}</h1>
           <div className={classes.serviceMain}>
             <div className={classes.serviceText}>
               {data.images && data.images.mainImage && (
@@ -126,7 +132,7 @@ const Service = props => {
               data.images.otherImages.map(image => {
                 return (
                   <>
-                    <img src={image} alt="Not found" />
+                    <img key={uniqueKey()} src={image} alt="Not found" />
                   </>
                 );
               })}
