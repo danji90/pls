@@ -13,6 +13,7 @@ import NavBar from '../NavBar/NavBar';
 import Individual from '../Individual/Individual';
 import Professional from '../Professional/Professional';
 import Business from '../Business/Business';
+import LevelTest from '../LevelTest/LevelTest';
 import conversation from '../../utils/images/study_group2.jpg';
 import workshop from '../../utils/images/workshop2.jpg';
 import business from '../../utils/images/business.jpg';
@@ -53,8 +54,8 @@ const Main = () => {
               </TabPanel>
             </Route>
             <Route path="/test">
-              <TabPanel index={4}>
-                Level test
+              <TabPanel index={4} backgroundColor="white">
+                <LevelTest />
                 <Footer />
               </TabPanel>
             </Route>
