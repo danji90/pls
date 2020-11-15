@@ -1,26 +1,33 @@
 {
   "files": {
-    "main.css": "/pls/static/css/main.938dd5a4.chunk.css",
-    "main.js": "/pls/static/js/main.363279c4.chunk.js",
-    "main.js.map": "/pls/static/js/main.363279c4.chunk.js.map",
-    "runtime-main.js": "/pls/static/js/runtime-main.e4849d10.js",
-    "runtime-main.js.map": "/pls/static/js/runtime-main.e4849d10.js.map",
-    "static/js/2.9befd604.chunk.js": "/pls/static/js/2.9befd604.chunk.js",
-    "static/js/2.9befd604.chunk.js.map": "/pls/static/js/2.9befd604.chunk.js.map",
+    "main.css": "/pls/static/css/main.7d85b1cc.chunk.css",
+    "main.js": "/pls/static/js/main.0e0c4c3c.chunk.js",
+    "main.js.map": "/pls/static/js/main.0e0c4c3c.chunk.js.map",
+    "runtime-main.js": "/pls/static/js/runtime-main.247e5b09.js",
+    "runtime-main.js.map": "/pls/static/js/runtime-main.247e5b09.js.map",
+    "static/js/2.9f5d492e.chunk.js": "/pls/static/js/2.9f5d492e.chunk.js",
+    "static/js/2.9f5d492e.chunk.js.map": "/pls/static/js/2.9f5d492e.chunk.js.map",
     "index.html": "/pls/index.html",
-    "precache-manifest.3b555238a6499413794e4fe4c10b7697.js": "/pls/precache-manifest.3b555238a6499413794e4fe4c10b7697.js",
+    "precache-manifest.11c5cdecf0a8f88741f50e4fd04c65ca.js": "/pls/precache-manifest.11c5cdecf0a8f88741f50e4fd04c65ca.js",
     "service-worker.js": "/pls/service-worker.js",
-    "static/css/main.938dd5a4.chunk.css.map": "/pls/static/css/main.938dd5a4.chunk.css.map",
-    "static/media/desk3.jpg": "/pls/static/media/desk3.c285a1ba.jpg",
+    "static/css/main.7d85b1cc.chunk.css.map": "/pls/static/css/main.7d85b1cc.chunk.css.map",
+    "static/js/2.9f5d492e.chunk.js.LICENSE.txt": "/pls/static/js/2.9f5d492e.chunk.js.LICENSE.txt",
+    "static/media/abruzzo_trek.jpg": "/pls/static/media/abruzzo_trek.5cd11d7d.jpg",
+    "static/media/business.jpg": "/pls/static/media/business.f0cfae75.jpg",
+    "static/media/conversation2.jpg": "/pls/static/media/conversation2.135fc6cf.jpg",
+    "static/media/examPrep.jpg": "/pls/static/media/examPrep.bbc4f543.jpg",
     "static/media/pete.png": "/pls/static/media/pete.f5b27d33.png",
     "static/media/pls_logo.dbe1efb4.svg": "/pls/static/media/pls_logo.dbe1efb4.svg",
     "static/media/pls_navbar_logo.png": "/pls/static/media/pls_navbar_logo.aae3dab4.png",
-    "static/media/study_group2.jpg": "/pls/static/media/study_group2.eb132ed9.jpg"
+    "static/media/presentation.jpg": "/pls/static/media/presentation.04f1d65d.jpg",
+    "static/media/schluderns_trek.png": "/pls/static/media/schluderns_trek.aea26e7b.png",
+    "static/media/study_group2.jpg": "/pls/static/media/study_group2.eb132ed9.jpg",
+    "static/media/workshop2.jpg": "/pls/static/media/workshop2.746d65ce.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e4849d10.js",
-    "static/js/2.9befd604.chunk.js",
-    "static/css/main.938dd5a4.chunk.css",
-    "static/js/main.363279c4.chunk.js"
+    "static/js/runtime-main.247e5b09.js",
+    "static/js/2.9f5d492e.chunk.js",
+    "static/css/main.7d85b1cc.chunk.css",
+    "static/js/main.0e0c4c3c.chunk.js"
   ]
 }
