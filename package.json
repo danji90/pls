@@ -18,10 +18,19 @@
     "react-scripts": "3.2.0"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.13.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-config-airbnb": "18.2.0",
+    "eslint-config-prettier": "6.12.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.21.4",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "stylelint": "13.6.0",
+    "stylelint-config-recommended-scss": "4.2.0",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-scss": "3.17.2",
     "prettier": "^1.19.1"
   },
   "scripts": {
@@ -42,7 +51,6 @@
     "parser": "babel-eslint",
     "extends": [
       "airbnb",
-      "airbnb/hooks",
       "prettier",
       "prettier/react"
     ],
@@ -50,7 +58,6 @@
       "prettier"
     ],
     "rules": {
-      "linebreak-style": "Off",
       "react/jsx-filename-extension": [
         1,
         {
@@ -59,10 +66,9 @@
             ".jsx"
           ]
         }
-      ]
+      ],
+      "prettier/prettier": "error"
     },
-    "react/forbid-prop-types": "Off",
-    "prettier/prettier": "error",
     "settings": {
       "react": {
         "version": "detect"
