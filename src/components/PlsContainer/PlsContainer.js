@@ -4,15 +4,14 @@ import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-
 const useStyles = makeStyles({
   landingContainer: {
     position: 'relative',
-    backgroundColor: (props) => props.backgroundColor,
+    backgroundColor: props => props.backgroundColor,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: (props) => props.flexDirection,
+    flexDirection: props => props.flexDirection,
   },
   bottomSlice: {
     '&::before': {
@@ -21,8 +20,10 @@ const useStyles = makeStyles({
       bottom: 0,
       right: 0,
       borderBottom: '80px solid #fff',
-      borderLeft: (props) => props.orientation === 'left' ? '90vw solid transparent' : 'unset',
-      borderRight: (props) => props.orientation === 'right' ? '90vw solid transparent' : 'unset',
+      borderLeft: props =>
+        props.orientation === 'left' ? '90vw solid transparent' : 'unset',
+      borderRight: props =>
+        props.orientation === 'right' ? '90vw solid transparent' : 'unset',
       width: 0,
     },
   },
@@ -33,15 +34,23 @@ const useStyles = makeStyles({
       top: 0,
       left: 0,
       borderTop: '80px solid white',
-      borderLeft: (props) => props.orientation === 'left' ? '90vw solid transparent' : 'unset',
-      borderRight: (props) => props.orientation === 'right' ? '90vw solid transparent' : 'unset',
+      borderLeft: props =>
+        props.orientation === 'left' ? '90vw solid transparent' : 'unset',
+      borderRight: props =>
+        props.orientation === 'right' ? '90vw solid transparent' : 'unset',
       width: 0,
-    }
-  }
+    },
+  },
 });
 
-const PlsContainer = (props) => {
-  const { children, backgroundColor, topSlice, bottomSlice, orientation } = props;
+const PlsContainer = props => {
+  const {
+    children,
+    backgroundColor,
+    topSlice,
+    bottomSlice,
+    orientation,
+  } = props;
   const classes = useStyles(props);
 
   return (
@@ -53,8 +62,8 @@ const PlsContainer = (props) => {
       {children}
     </div>
   );
-}
-  
+};
+
 PlsContainer.propTypes = {
   children: PropTypes.node,
   backgroundColor: PropTypes.string,
@@ -70,7 +79,7 @@ PlsContainer.defaultProps = {
   topSlice: false,
   bottomSlice: false,
   flexDirection: 'row',
-  orientation: 'left'
+  orientation: 'left',
 };
 
 export default PlsContainer;

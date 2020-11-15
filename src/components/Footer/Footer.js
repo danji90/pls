@@ -35,9 +35,9 @@ const useStyles = makeStyles({
       height: 40,
       width: 40,
       padding: 10,
-    }
+    },
   },
-  media:{
+  media: {
     padding: 10,
   },
   iconButton: {
@@ -52,53 +52,58 @@ const useStyles = makeStyles({
       display: 'flex',
       flexDirection: 'column',
     },
-  }
+  },
 });
 
-const Footer = (props) => {
-    const classes = useStyles(props);
-    return (
-      <footer className={classes.footer}>
-        <div className={classes.brand}>
-          <a href="/pls/" className={classes.brandLink}>
-            <img src={logo} alt="pls-logo" />
-            Pete's Language Services
-          </a>
-          <div className={classes.contact}>
-            <p>
-              <span>Via Castel Mareccio/Maretschgasse 2</span>
-              <span>39100 Bolzano/Bozen</span>
-              <span>Italy</span>
-            </p>
-            <p>
-              <span>Phone: +39 0471 978112</span>
-              <span>Mobile: +39 328 483 0917</span>
-            </p>
-            <p>
-              <span>e-mail: <a href="mailto:petemarshhunn@yahoo.com">petemarshhunn@yahoo.com</a></span>
-            </p>
-          </div>
+const Footer = props => {
+  const classes = useStyles(props);
+  return (
+    <footer className={classes.footer}>
+      <div className={classes.brand}>
+        <a href="/pls/" className={classes.brandLink}>
+          <img src={logo} alt="pls-logo" />
+          Pete&aposs Language Services
+        </a>
+        <div className={classes.contact}>
+          <p>
+            <span>Via Castel Mareccio/Maretschgasse 2</span>
+            <span>39100 Bolzano/Bozen</span>
+            <span>Italy</span>
+          </p>
+          <p>
+            <span>Phone: +39 0471 978112</span>
+            <span>Mobile: +39 328 483 0917</span>
+          </p>
+          <p>
+            <span>
+              e-mail:{' '}
+              <a href="mailto:petemarshhunn@yahoo.com">
+                petemarshhunn@yahoo.com
+              </a>
+            </span>
+          </p>
         </div>
-        <div className={classes.media}>
-          <IconButton
-            href="https://www.facebook.com/marsh.peter"
-            target="_blank"
-            rel="noopener"
-            className={classes.iconButton}
-            >
-            <FacebookIcon />
-          </IconButton>
-          <IconButton
-            href="https://www.linkedin.com/in/pete-marsh-hunn-7007a4129/"
-            target="_blank"
-            rel="noopener"
-            className={classes.iconButton}
-            >
-            <LinkedInIcon />
-          </IconButton>
-        </div>
-      </footer>
-    );
-  }
+      </div>
+      <div className={classes.media}>
+        <IconButton
+          href="https://www.facebook.com/marsh.peter"
+          target="_blank"
+          rel="noopener"
+          className={classes.iconButton}
+        >
+          <FacebookIcon />
+        </IconButton>
+        <IconButton
+          href="https://www.linkedin.com/in/pete-marsh-hunn-7007a4129/"
+          target="_blank"
+          rel="noopener"
+          className={classes.iconButton}
+        >
+          <LinkedInIcon />
+        </IconButton>
+      </div>
+    </footer>
+  );
+};
 
-  export default Footer;
+export default Footer;

@@ -1,21 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import PlsContainer from '../PlsContainer/PlsContainer'
+import PlsContainer from '../PlsContainer/PlsContainer';
 import Service from '../Service/Service';
 
-import desk from '../../utils/images/desk3.jpg';
-import conversation_1 from '../../utils/images/study_group2.jpg';
-import { ReactComponent as PLSLogo } from '../../utils/images/pls_logo.svg';
+import serviceData from '../../utils/service_data';
 
-import serviceData from '../../utils/service_data.js'; 
+const individualServices = serviceData.filter(
+  service => service.category === 'individual',
+);
 
-const individualServices = serviceData.filter((service) => service.category === 'individual')
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   landingTitle: {
+    fontSize: 25,
     width: '100%',
     '& h1': {
-      padding: '40px 20px',
+      padding: '40px 40px',
     },
   },
   divider: {
@@ -23,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   },
   servicesContainer: {
     width: '100%',
-  }
+  },
 }));
 
 const Individual = () => {
@@ -37,11 +36,13 @@ const Individual = () => {
       </PlsContainer>
       <PlsContainer flexDirection="column">
         <div className={classes.servicesContainer}>
-          {individualServices.map((service) => <Service key={service.id} data={service}/>)}
+          {individualServices.map((service, idx) => (
+            <Service key={service.id} data={service} idx={idx} />
+          ))}
         </div>
       </PlsContainer>
     </>
   );
-}
+};
 
-  export default Individual;
+export default Individual;

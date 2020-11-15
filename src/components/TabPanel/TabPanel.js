@@ -1,61 +1,54 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   tabBgImage: {
     position: 'fixed',
     width: '100%',
     height: '100vh',
     top: 0,
     zIndex: 0,
+    opacity: 0.2,
     backgroundImage: props => `url(${props.backgroundImage})`,
-    backgroundPosition: 'center', 
+    backgroundPosition: 'center',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat, repeat',
   },
-  tabPanel: {
-    backgroundColor: (props) => props.backgroundColor,
-  },
+  tabPanel: {},
 }));
 
-const TabPanel = (props) => {
-    const { children, index, propClasses, backgroundImage} = props;
-    const classes = useStyles(props);
-    console.log();
-    return (
-      <>
-        {backgroundImage && <div className={classes.tabBgImage}></div>}
-        <div
-          role="tabpanel"
-          id={`tabpanel-${index}`}
-          aria-labelledby={`tab-${index}`}
-          className={propClasses || classes.tabPanel}
-          style={{paddingBottom: 350}}
-        >
-          {
-            <Box p={3}>
-              {children}
-            </Box>
-            }
-        </div>
-      </>
-    );
-  }
-  
-  TabPanel.propTypes = {
-    children: PropTypes.node,
-    index: PropTypes.any.isRequired,
-    backgroundColor: PropTypes.string,
-    backgroundImage: PropTypes.string,
-  };
+const TabPanel = props => {
+  const { children, index, backgroundImage, backgroundColor } = props;
+  const classes = useStyles(props);
+  return (
+    <>
+      {backgroundImage && <div className={classes.tabBgImage} />}
+      <div
+        role="tabpanel"
+        id={`tabpanel-${index}`}
+        aria-labelledby={`tab-${index}`}
+        className={classes.tabPanel}
+        style={{ backgroundColor, paddingBottom: 350 }}
+      >
+        <Box p={3}>{children}</Box>
+      </div>
+    </>
+  );
+};
 
-  TabPanel.defaultProps = {
-    children: undefined,
-    backgroundColor: '#fec44f',
-  };
+TabPanel.propTypes = {
+  children: PropTypes.node,
+  index: PropTypes.number.isRequired,
+  backgroundColor: PropTypes.string,
+  backgroundImage: PropTypes.string,
+};
 
-  export default TabPanel;
+TabPanel.defaultProps = {
+  children: undefined,
+  backgroundColor: '#fec44f',
+  backgroundImage: undefined,
+};
+
+export default TabPanel;

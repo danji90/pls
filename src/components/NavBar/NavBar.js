@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  AppBar,
-  Tabs,
-  Tab,
-  List,
-  ListItem,
-  Hidden,
-  Collapse,
-  } from '@material-ui/core';
+import { AppBar, Tabs, Tab, List, ListItem, Hidden } from '@material-ui/core';
 import IconButton from '@material-ui/core/IconButton';
-import { Menu, Close} from '@material-ui/icons';
+import { Menu, Close } from '@material-ui/icons';
 import { tabValues } from '../../utils/appUtils';
 import logo from '../../utils/images/pls_navbar_logo.png';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   appBar: {
     [theme.breakpoints.down('sm')]: {
       padding: '0',
@@ -47,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       width: '48px',
       height: '48px',
-    }
+    },
   },
   title: {
     [theme.breakpoints.down('sm')]: {
@@ -63,9 +55,9 @@ const useStyles = makeStyles((theme) => ({
     },
     boxShadow: 'none',
   },
-  padding : {
-    paddingRight : 30,
-    cursor : "pointer",
+  padding: {
+    paddingRight: 30,
+    cursor: 'pointer',
   },
   tabs: {
     width: '65%',
@@ -78,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
   labelContainer: {
     paddingLeft: 0,
     paddingRight: 0,
-    fontSize: "5px"
+    fontSize: '5px',
   },
   list: {
     height: '100%',
@@ -111,9 +103,12 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
   const classes = useStyles();
-  const valueOnLoad = window.location.hash.split('/').length === 2 &&
+  const valueOnLoad =
+    window.location.hash.split('/').length === 2 &&
     window.location.hash.split('/')[1].toLowerCase();
-  const [value, setValue] = useState(tabValues.find(value => value === valueOnLoad) || 'home');
+  const [value, setValue] = useState(
+    tabValues.find(val => val === valueOnLoad) || 'home',
+  );
   const [open, setMenuOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
@@ -125,8 +120,8 @@ const NavBar = () => {
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls/" className={classes.brand}>
-            <img src={logo} alt="pls-logo" className={classes.logo}/>
-            <Hidden only='xs'>
+            <img src={logo} alt="pls-logo" className={classes.logo} />
+            <Hidden only="xs">
               <div className={classes.title}>Pete's Language Services</div>
             </Hidden>
           </a>
@@ -138,18 +133,54 @@ const NavBar = () => {
         </Hidden>
         <Hidden smDown>
           <Tabs
-            indicatorColor='primary'
+            indicatorColor="primary"
             className={classes.tabs}
             value={value}
             onChange={handleChange}
             variant="fullWidth"
           >
-            <Tab to='/home' value='home' component={NavLink} label="Home" className={classes.tab} />
-            <Tab to='/individual' value='individual' component={NavLink} label="Individual Services" className={classes.tab} />
-            <Tab to='/professional' value='professional'  component={NavLink} label="Professional Services" className={classes.tab} />
-            <Tab to='/business' value='business'  component={NavLink} label="Business Services" className={classes.tab} />
-            <Tab to='/test' value='test'  component={NavLink} label="Level Test" className={classes.tab} />
-            <Tab to='/contact' value='contact'  component={NavLink} label="Contact Form" className={classes.tab} />
+            <Tab
+              to="/home"
+              value="home"
+              component={NavLink}
+              label="Home"
+              className={classes.tab}
+            />
+            <Tab
+              to="/individual"
+              value="individual"
+              component={NavLink}
+              label="Individual Services"
+              className={classes.tab}
+            />
+            <Tab
+              to="/professional"
+              value="professional"
+              component={NavLink}
+              label="Professional Services"
+              className={classes.tab}
+            />
+            <Tab
+              to="/business"
+              value="business"
+              component={NavLink}
+              label="Business Services"
+              className={classes.tab}
+            />
+            <Tab
+              to="/test"
+              value="test"
+              component={NavLink}
+              label="Level Test"
+              className={classes.tab}
+            />
+            <Tab
+              to="/contact"
+              value="contact"
+              component={NavLink}
+              label="Contact Form"
+              className={classes.tab}
+            />
           </Tabs>
         </Hidden>
       </AppBar>
@@ -157,61 +188,102 @@ const NavBar = () => {
       <Hidden mdUp>
         <div className={`${classes.collapse} ${open ? classes.open : ''}`}>
           {/* <Collapse in={open}> */}
-            <List className={classes.list} >
-              <ListItem key="home" active={(value === 'home').toString()} button divider onClick={()=>{
-                  setValue('home');
-                  setMenuOpen(false);
-                }}
-                to='/home' component={NavLink}
-                className={classes.listItem}>
-                  Home
-              </ListItem>
-              <ListItem key="individual" active={(value === 'individual').toString()} button divider onClick={()=>{
-                  setValue('individual');
-                  setMenuOpen(false);
-                }}
-                to='/individual' component={NavLink}
-                className={classes.listItem}>
-                Individual Services
-              </ListItem>
-              <ListItem key="professional" active={(value === 'professional').toString()} button divider onClick={()=>{
-                  setValue('professional');
-                  setMenuOpen(false);
-                }}
-                to='/professional' component={NavLink}
-                className={classes.listItem}>
-                Professional Services
-              </ListItem>
-              <ListItem key="business" active={(value === 'business').toString()} button divider onClick={()=>{
-                  setValue('business');
-                  setMenuOpen(false);
-                }}
-                to='/business' component={NavLink}
-                className={classes.listItem}>
-                Business Services
-              </ListItem>
-              <ListItem key="test" active={(value === 'test').toString()} button divider onClick={()=>{
-                  setValue('test');
-                  setMenuOpen(false);
-                }}
-                to='/test' component={NavLink}
-                className={classes.listItem}>
-                Level Test
-              </ListItem>
-              <ListItem key="contact" active={(value === 'contact').toString()} button onClick={()=>{
-                  setValue('contact');
-                  setMenuOpen(false);
-                }}
-                to='/contact' component={NavLink}
-                className={classes.listItem}>
-                Contact Form
-              </ListItem>
-            </List>
+          <List className={classes.list}>
+            <ListItem
+              key="home"
+              active={(value === 'home').toString()}
+              button
+              divider
+              onClick={() => {
+                setValue('home');
+                setMenuOpen(false);
+              }}
+              to="/home"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Home
+            </ListItem>
+            <ListItem
+              key="individual"
+              active={(value === 'individual').toString()}
+              button
+              divider
+              onClick={() => {
+                setValue('individual');
+                setMenuOpen(false);
+              }}
+              to="/individual"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Individual Services
+            </ListItem>
+            <ListItem
+              key="professional"
+              active={(value === 'professional').toString()}
+              button
+              divider
+              onClick={() => {
+                setValue('professional');
+                setMenuOpen(false);
+              }}
+              to="/professional"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Professional Services
+            </ListItem>
+            <ListItem
+              key="business"
+              active={(value === 'business').toString()}
+              button
+              divider
+              onClick={() => {
+                setValue('business');
+                setMenuOpen(false);
+              }}
+              to="/business"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Business Services
+            </ListItem>
+            <ListItem
+              key="test"
+              active={(value === 'test').toString()}
+              button
+              divider
+              onClick={() => {
+                setValue('test');
+                setMenuOpen(false);
+              }}
+              to="/test"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Level Test
+            </ListItem>
+            <ListItem
+              key="contact"
+              active={(value === 'contact').toString()}
+              button
+              onClick={() => {
+                setValue('contact');
+                setMenuOpen(false);
+              }}
+              to="/contact"
+              component={NavLink}
+              className={classes.listItem}
+            >
+              Contact Form
+            </ListItem>
+          </List>
           {/* </Collapse> */}
         </div>
       </Hidden>
     </>
-  )
-}
+  );
+};
 
 export default NavBar;

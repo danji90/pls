@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-  createMuiTheme,
-  ThemeProvider,
-} from '@material-ui/core/styles';
-import Main from './components/Main/Main'
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Main from './components/Main/Main';
 import './App.css';
 
 const theme = createMuiTheme({
@@ -33,7 +30,7 @@ const theme = createMuiTheme({
       },
       flexContainer: {
         height: '100%',
-      }
+      },
     },
     MuiTab: {
       root: {
@@ -52,7 +49,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Main />
-    </ThemeProvider>    
+    </ThemeProvider>
   );
 }
 
