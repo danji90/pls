@@ -1,4 +1,7 @@
 import conversation_1 from './images/study_group2.jpg';
+import examPrep from './images/examPrep.jpg';
+import trek_abrruzzo from './images/abruzzo_trek.jpg';
+import trek_schluderns from './images/schluderns_trek.png';
 
 export const sectionData = [
     {
@@ -96,7 +99,10 @@ export const sectionData = [
                 '€40,00 per hour (of 60 minutes) for 1 person, €44,00 for 2 people, €47,00 for 3 or more people. Minimum 10 lessons',
                 'Plus travelling expenses for lessons outside Bolzano/Bozen'
             ]
-        }
+        },
+        images: [
+            examPrep,
+        ]
     },
     // English Training in Companies
     {
@@ -187,6 +193,10 @@ export const sectionData = [
                 'Over the years I have also organised many English Trekking Weeks all over Italy in much the same way as the English Walking Days above. We’ve been to the Monti Madonie in Sicily, to Elba, to the Costa Amalfitana, to Abruzzo, to the Cinque Terre, to the mountains above Lake Como, etc., generally staying in simple alberghi. Usually in spring/early summer. Again, this is a collective effort, we organise everything together at self-cost and I provide the linguistic input, for which I charge a very reasonable €100,00 per person for the week. If you’re interested, fill in the contact form and I will put you on my mailing list.'
             ]
         },
+        images: [
+            trek_abrruzzo, 
+            trek_schluderns
+        ]
     },
     // English Consultant for Self-Study
     {

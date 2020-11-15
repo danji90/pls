@@ -80,6 +80,11 @@ const Service = (props) => {
             </div>
             {data.images && <><div className={classes.serviceImages}><img src={data.images[0]} alt="service image"></img></div></>}
           </div>
+          <div className={classes.serviceImages}>
+            {data.images && data.images.slice(1).map((image) => {
+              return <><img src={image} alt="service image"></img></>
+            })}
+          </div>
         </div>
         <img className={classes.dividerBottom} src={dividerBottom} alt="divider" ></img>
       </>
