@@ -72,7 +72,7 @@ const Service = props => {
       />
       <div id={data.id} className={classes.service}>
         <Container>
-          <h1 className={classes.serviceTitle}>{data.title}</h1>
+          <h1 className={classes.serviceTitle}>{renderHTML(data.title)}</h1>
           <div className={classes.serviceMain}>
             <div className={classes.serviceText}>
               {data.images && data.images.mainImage && (

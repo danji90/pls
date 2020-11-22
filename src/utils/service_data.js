@@ -172,7 +172,7 @@ export const sectionData = [
   {
     id: 'trans_proof_present',
     category: 'professional',
-    title: 'Translations/Proof-reading/Presentations',
+    title: 'Translations/ Proof-reading/ Presentations',
     content: {
       paragraphs: [
         'More and more business documents have to be written in English, students are increasingly writing their Master and PhD theses in English and need their texts proof-read, many people have to give presentations in English and need to practise this beforehand. In cases like these, it’s always best to go over what you have written with a native-speaker. I have several years‘ experience of translating documents into English (tourist brochures, historical guide-books, product manuals, filmscripts, etc.) and have helped many students with their dissertations/theses and various professional people with their presentations at international conferences.',
