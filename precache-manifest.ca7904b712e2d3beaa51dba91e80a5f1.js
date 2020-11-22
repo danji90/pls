@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c8955826e1764858cc0a69d3e80ada30",
+    "revision": "6fbaaa0112c47ea97ce527d2d70ce71f",
     "url": "/pls/index.html"
   },
   {
-    "revision": "a4e192ea5c6ee73c6a1b",
+    "revision": "c88d2682d238dbd7bef7",
     "url": "/pls/static/css/main.d547bdcc.chunk.css"
   },
   {
@@ -16,20 +16,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pls/static/js/2.d6a911c7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a4e192ea5c6ee73c6a1b",
-    "url": "/pls/static/js/main.66d34fd0.chunk.js"
+    "revision": "c88d2682d238dbd7bef7",
+    "url": "/pls/static/js/main.76528631.chunk.js"
   },
   {
     "revision": "b9f918ab97871109e8d2",
     "url": "/pls/static/js/runtime-main.247e5b09.js"
   },
   {
-    "revision": "5cd11d7d688cfb088b34142880ab58e5",
-    "url": "/pls/static/media/abruzzo_trek.5cd11d7d.jpg"
+    "revision": "a1402870bd0a5245d94deeb2b493daec",
+    "url": "/pls/static/media/abruzzo_trek.a1402870.jpg"
   },
   {
-    "revision": "f0cfae75cd45fe36048b9b5184b24bcd",
-    "url": "/pls/static/media/business.f0cfae75.jpg"
+    "revision": "0b6e7fcf762ef29e830c1ae2fbe0c3a0",
+    "url": "/pls/static/media/business.0b6e7fcf.jpg"
   },
   {
     "revision": "135fc6cf6c6a42845d78e8fc7b337d61",
@@ -56,15 +56,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pls/static/media/presentation.04f1d65d.jpg"
   },
   {
-    "revision": "aea26e7b717194c41af7459044af0646",
-    "url": "/pls/static/media/schluderns_trek.aea26e7b.png"
+    "revision": "48ff6727729827705ed8b961feaf4329",
+    "url": "/pls/static/media/schluderns_trek.48ff6727.png"
   },
   {
-    "revision": "eb132ed949cb9c8ca1a54b7e096a02e8",
-    "url": "/pls/static/media/study_group2.eb132ed9.jpg"
+    "revision": "45fb4f0be53ca4a55c77ef6576bee2ba",
+    "url": "/pls/static/media/study_group2.45fb4f0b.jpg"
   },
   {
-    "revision": "746d65cea48d3aace52aa58f7c6bf385",
-    "url": "/pls/static/media/workshop2.746d65ce.jpg"
+    "revision": "8af3c4802e28007230834a70ce31bb6a",
+    "url": "/pls/static/media/workshop2.8af3c480.jpg"
   }
 ]);
