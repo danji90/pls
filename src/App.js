@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Main from './components/Main/Main';
 import './App.css';
@@ -45,7 +45,24 @@ const theme = createMuiTheme({
   },
 });
 
+const callApi = async () => {
+  const response = await fetch('/api/hello');
+  const body = await response.json();
+  if (response.status !== 200) throw Error(body.message);
+  return body;
+};
+
 function App() {
+  const [apiReady, setApiReady] = useState(false);
+
+  useEffect(() => {
+    callApi()
+      .then(res => setApiReady({ response: res.express }))
+      .catch(err => console.log(err));
+  }, []);
+
+  console.log(apiReady.response);
+
   return (
     <ThemeProvider theme={theme}>
       <Main />
