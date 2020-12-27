@@ -17,6 +17,7 @@ import LevelTest from '../LevelTest/LevelTest';
 import conversation from '../../utils/images/study_group2.jpg';
 import workshop from '../../utils/images/workshop2.jpg';
 import business from '../../utils/images/business.jpg';
+import test from '../../utils/images/examPrep.jpg';
 
 const Main = () => {
   return (
@@ -54,7 +55,7 @@ const Main = () => {
               </TabPanel>
             </Route>
             <Route path="/test">
-              <TabPanel index={4} backgroundColor="white">
+              <TabPanel index={4} backgroundImage={test}>
                 <LevelTest />
                 <Footer />
               </TabPanel>

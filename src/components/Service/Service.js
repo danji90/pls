@@ -4,11 +4,7 @@ import Container from '@material-ui/core/Container';
 import renderHTML from 'react-render-html';
 import { v1 as uniqueKey } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
-
-import dividerTopEven from '../../utils/images/pls_divider_top_even.png';
-import dividerBottomEven from '../../utils/images/pls_divider_bottom_even.png';
-import dividerTopOdd from '../../utils/images/pls_divider_top_odd.png';
-import dividerBottomOdd from '../../utils/images/pls_divider_bottom_odd.png';
+import Divider from '../Divider/Divider';
 
 const useStyles = makeStyles(theme => ({
   service: {
@@ -65,11 +61,7 @@ const Service = props => {
 
   return (
     <>
-      <img
-        className={classes.dividerTop}
-        src={idx % 2 ? dividerTopEven : dividerTopOdd}
-        alt="divider"
-      />
+      <Divider idx={idx} />
       <div id={data.id} className={classes.service}>
         <Container>
           <h1 className={classes.serviceTitle}>{renderHTML(data.title)}</h1>
@@ -139,11 +131,7 @@ const Service = props => {
           </div>
         </Container>
       </div>
-      <img
-        className={classes.dividerBottom}
-        src={idx % 2 ? dividerBottomEven : dividerBottomOdd}
-        alt="divider"
-      />
+      <Divider idx={idx} position="bottom" />
     </>
   );
 };
