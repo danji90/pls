@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Tabs, Tab, List, ListItem, Hidden } from '@material-ui/core';
@@ -103,17 +103,28 @@ const useStyles = makeStyles(theme => ({
 
 const NavBar = () => {
   const classes = useStyles();
-  const valueOnLoad =
-    window.location.hash.split('/').length === 2 &&
-    window.location.hash.split('/')[1].toLowerCase();
+  const getValueFromUrl = () => {
+    return (
+      window.location.hash.split('/').length === 2 &&
+      window.location.hash.split('/')[1].toLowerCase()
+    );
+  };
   const [value, setValue] = useState(
-    tabValues.find(val => val === valueOnLoad) || 'home',
+    tabValues.find(val => val === getValueFromUrl()) || 'home',
   );
   const [open, setMenuOpen] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    const handleUrlChange = () => setValue(getValueFromUrl());
+    window.addEventListener('hashchange', handleUrlChange, false);
+    return () => {
+      window.removeEventListener('hashchange', handleUrlChange, false);
+    };
+  }, []);
 
   return (
     <>
@@ -133,7 +144,7 @@ const NavBar = () => {
         </Hidden>
         <Hidden smDown>
           <Tabs
-            indicatorColor="primary"
+            TabIndicatorProps={{ style: { backgroundColor: 'black' } }}
             className={classes.tabs}
             value={value}
             onChange={handleChange}

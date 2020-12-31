@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Prompt } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import PlsContainer from '../PlsContainer/PlsContainer';
 import Divider from '../Divider/Divider';
@@ -36,8 +37,39 @@ const useStyles = makeStyles({
 
 const LevelTest = () => {
   const classes = useStyles();
+  const [isBlocking, setIsBlocking] = useState(false);
+  const [hoverIframe, setHoverIframe] = useState(false);
+
+  useEffect(() => {
+    const moveIn = () => setHoverIframe(true);
+    const moveOut = () => setHoverIframe(false);
+    const iFrame = document.getElementById('pls-google-form');
+    if (iFrame) {
+      iFrame.addEventListener('mouseover', moveIn);
+      iFrame.addEventListener('mouseout', moveOut);
+    }
+    return () => {
+      iFrame.removeEventListener('mouseover', moveIn);
+      iFrame.removeEventListener('mouseout', moveOut);
+    };
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('blur', () => {
+      if (hoverIframe && !isBlocking) {
+        setIsBlocking(true);
+      }
+    });
+  }, [hoverIframe, isBlocking]);
+
   return (
     <>
+      <Prompt
+        when={isBlocking}
+        message={() =>
+          'Warning: Any progress in your exam document will be lost. Are you sure you want to leave the page?'
+        }
+      />
       <PlsContainer>
         <div className={classes.landingTitle}>
           <h1>PLS - Level test</h1>
@@ -45,10 +77,10 @@ const LevelTest = () => {
       </PlsContainer>
       <PlsContainer flexDirection="column" styles={{ alignItems: 'center' }}>
         <Divider idx={2} />
-        {/* <Paper>hello</Paper> */}
         <div className={classes.formContainer}>
           <iframe
             className={classes.iframe}
+            id="pls-google-form"
             title="pls-google-form"
             src="https://docs.google.com/forms/d/e/1FAIpQLSfa7XH3bafMVuNxRcI2wyu1CnndZvz9MUdSw-sJtBbepVIn6Q/viewform?embedded=true"
             width="700"

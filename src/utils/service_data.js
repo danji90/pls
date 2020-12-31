@@ -24,9 +24,8 @@ export const sectionData = [
       ],
     },
     extras: {
-      paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
-      ],
+      paragraphs: [],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -58,9 +57,9 @@ export const sectionData = [
     },
     extras: {
       paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
         'If you require a course at your company, please go to English Training in Companies',
       ],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -93,9 +92,8 @@ export const sectionData = [
       ],
     },
     extras: {
-      paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
-      ],
+      paragraphs: [],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -127,9 +125,9 @@ export const sectionData = [
     },
     extras: {
       paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
         'If you want to improve your work English as a private person, go to the English for Office/Work page.',
       ],
+      levelTest: true,
       links: [],
     },
     cost: {
