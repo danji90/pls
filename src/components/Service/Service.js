@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
@@ -20,16 +20,6 @@ const linkToLevelTest = (
     </p>
   </div>
 );
-// You will need to do a Level Test to determine your English level. Please click
-//   return (
-//     <div>
-//       <p>
-//         You will need to do a Level Test to determine your English level. Please
-//         click <Link to="/test">here</Link>
-//       </p>
-//     </div>
-//   );
-// };
 
 const useStyles = makeStyles(theme => ({
   service: {
@@ -90,6 +80,11 @@ const useStyles = makeStyles(theme => ({
 const Service = props => {
   const { data, idx } = props;
   const classes = useStyles();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleAccordionChange = panel => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <>
@@ -123,12 +118,12 @@ const Service = props => {
               <br />
               {data.format && (
                 <>
-                  <Accordion className={classes.accordion}>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
+                  <Accordion
+                    className={classes.accordion}
+                    expanded={expanded === 'format'}
+                    onChange={handleAccordionChange('format')}
+                  >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <Typography variant="h6" className={classes.heading}>
                         Format
                       </Typography>
@@ -143,12 +138,12 @@ const Service = props => {
               )}
               {data.cost && (
                 <>
-                  <Accordion className={classes.accordion}>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      aria-controls="panel1a-content"
-                      id="panel1a-header"
-                    >
+                  <Accordion
+                    className={classes.accordion}
+                    expanded={expanded === 'cost'}
+                    onChange={handleAccordionChange('cost')}
+                  >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
                       <Typography variant="h6" className={classes.heading}>
                         Cost
                       </Typography>
