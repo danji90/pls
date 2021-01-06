@@ -4,6 +4,8 @@ import trekAbrruzzo from './images/abruzzo_trek.jpg';
 import trekSchluderns from './images/schluderns_trek.png';
 import workshop from './images/workshop2.jpg';
 import presentation from './images/presentation.jpg';
+import office from './images/officework.jpg';
+import inhouse from './images/inhouse_lesson.jpg';
 
 export const sectionData = [
   {
@@ -24,9 +26,8 @@ export const sectionData = [
       ],
     },
     extras: {
-      paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
-      ],
+      paragraphs: [],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -58,9 +59,9 @@ export const sectionData = [
     },
     extras: {
       paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
         'If you require a course at your company, please go to English Training in Companies',
       ],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -68,6 +69,9 @@ export const sectionData = [
         '€40,00 per hour (of 60 minutes) for 1 person, €44,00 for 2 people, €47,00 for 3 people. Minimum 10 lessons',
         'Plus travelling expenses for lessons outside Bolzano/Bozen',
       ],
+    },
+    images: {
+      mainImage: office,
     },
   },
   // Exam preparation
@@ -93,9 +97,8 @@ export const sectionData = [
       ],
     },
     extras: {
-      paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
-      ],
+      paragraphs: [],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -127,9 +130,9 @@ export const sectionData = [
     },
     extras: {
       paragraphs: [
-        'You will need to do a Level Test to determine your English level. Please click here',
         'If you want to improve your work English as a private person, go to the English for Office/Work page.',
       ],
+      levelTest: true,
       links: [],
     },
     cost: {
@@ -137,6 +140,9 @@ export const sectionData = [
         '€44,00 per hour (of 60 minutes) for 1 person, €49,00 for 2 people, €54,00 for 3 or more people. Minimum 10 lessons',
         'Plus travelling expenses for lessons outside Bolzano/Bozen',
       ],
+    },
+    images: {
+      mainImage: inhouse,
     },
   },
   // Workshops for English Teachers
@@ -146,7 +152,7 @@ export const sectionData = [
     title: 'Workshops for English Teachers',
     content: {
       paragraphs: [
-        'nglish teachers in state schools often find it useful to have regular sessions to keep their English ´ticking over‘. The sessions could be focused on a particular topic, e.g. how to make listening activities more authentic, or how to prepare students for the Cambridge exams. Or they could be more general: a potpourri of advanced language work to keep teachers‘ English on their toes and up-to-date, some teaching ideas for use in class, new teaching developments e.g. how to do online teaching more effectively or how to use webinars for our professional development.',
+        'English teachers in state schools often find it useful to have regular sessions to keep their English ´ticking over‘. The sessions could be focused on a particular topic, e.g. how to make listening activities more authentic, or how to prepare students for the Cambridge exams. Or they could be more general: a potpourri of advanced language work to keep teachers‘ English on their toes and up-to-date, some teaching ideas for use in class, new teaching developments e.g. how to do online teaching more effectively or how to use webinars for our professional development.',
       ],
     },
     format: {

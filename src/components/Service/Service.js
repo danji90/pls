@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import renderHTML from 'react-render-html';
 import { v1 as uniqueKey } from 'uuid';
 import { makeStyles } from '@material-ui/core/styles';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Divider from '../Divider/Divider';
 
-import dividerTopEven from '../../utils/images/pls_divider_top_even.png';
-import dividerBottomEven from '../../utils/images/pls_divider_bottom_even.png';
-import dividerTopOdd from '../../utils/images/pls_divider_top_odd.png';
-import dividerBottomOdd from '../../utils/images/pls_divider_bottom_odd.png';
+const linkToLevelTest = (
+  <div>
+    <p>
+      You will need to do a Level Test to determine your English level. Please
+      click <Link to="/test">here</Link>
+    </p>
+  </div>
+);
 
 const useStyles = makeStyles(theme => ({
   service: {
@@ -39,8 +50,15 @@ const useStyles = makeStyles(theme => ({
       float: 'right',
       maxWidth: 500,
       maxHeight: 500,
-      margin: 20,
+      marginLeft: 60,
     },
+  },
+  accordion: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  accordionDetails: {
+    display: 'block',
   },
   serviceImages: {
     minWidth: 300,
@@ -62,31 +80,30 @@ const useStyles = makeStyles(theme => ({
 const Service = props => {
   const { data, idx } = props;
   const classes = useStyles();
+  const [expanded, setExpanded] = useState(false);
+
+  const handleAccordionChange = panel => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   return (
     <>
-      <img
-        className={classes.dividerTop}
-        src={idx % 2 ? dividerTopEven : dividerTopOdd}
-        alt="divider"
-      />
+      <Divider idx={idx} />
       <div id={data.id} className={classes.service}>
         <Container>
           <h1 className={classes.serviceTitle}>{renderHTML(data.title)}</h1>
           <div className={classes.serviceMain}>
             <div className={classes.serviceText}>
               {data.images && data.images.mainImage && (
-                <>
-                  <div
-                    className={classes.mainImage}
-                    style={{
-                      backgroundImage: `url(${data.images.mainImage})`,
-                      backgroundPosition: 'center',
-                      backgroundSize: 'cover',
-                      backgroundRepeat: 'no-repeat, repeat',
-                    }}
-                  />
-                </>
+                <div
+                  className={classes.mainImage}
+                  style={{
+                    backgroundImage: `url(${data.images.mainImage})`,
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundRepeat: 'no-repeat, repeat',
+                  }}
+                />
               )}
               {data.content.paragraphs.map(paragraph => (
                 <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
@@ -101,12 +118,45 @@ const Service = props => {
               <br />
               {data.format && (
                 <>
-                  <h3>Format</h3>
-                  {data.format.paragraphs.map(paragraph => (
-                    <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
-                  ))}
+                  <Accordion
+                    className={classes.accordion}
+                    expanded={expanded === 'format'}
+                    onChange={handleAccordionChange('format')}
+                  >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Typography variant="h6" className={classes.heading}>
+                        Format
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails className={classes.accordionDetails}>
+                      {data.format.paragraphs.map(paragraph => (
+                        <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                      ))}
+                    </AccordionDetails>
+                  </Accordion>
                 </>
               )}
+              {data.cost && (
+                <>
+                  <Accordion
+                    className={classes.accordion}
+                    expanded={expanded === 'cost'}
+                    onChange={handleAccordionChange('cost')}
+                  >
+                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                      <Typography variant="h6" className={classes.heading}>
+                        Cost
+                      </Typography>
+                    </AccordionSummary>
+                    <AccordionDetails className={classes.accordionDetails}>
+                      {data.cost.paragraphs.map(paragraph => (
+                        <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                      ))}
+                    </AccordionDetails>
+                  </Accordion>
+                </>
+              )}
+              <br />
               {data.extras && (
                 <>
                   {data.extras.paragraphs.map(paragraph => (
@@ -115,14 +165,7 @@ const Service = props => {
                 </>
               )}
               <br />
-              {data.cost && (
-                <>
-                  <h3>Cost</h3>
-                  {data.cost.paragraphs.map(paragraph => (
-                    <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
-                  ))}
-                </>
-              )}
+              {data.extras && data.extras.levelTest && linkToLevelTest}
               <br />
             </div>
           </div>
@@ -130,20 +173,12 @@ const Service = props => {
             {data.images &&
               data.images.otherImages &&
               data.images.otherImages.map(image => {
-                return (
-                  <>
-                    <img key={uniqueKey()} src={image} alt="Not found" />
-                  </>
-                );
+                return <img key={uniqueKey()} src={image} alt="Not found" />;
               })}
           </div>
         </Container>
       </div>
-      <img
-        className={classes.dividerBottom}
-        src={idx % 2 ? dividerBottomEven : dividerBottomOdd}
-        alt="divider"
-      />
+      <Divider idx={idx} position="bottom" />
     </>
   );
 };
