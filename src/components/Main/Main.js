@@ -16,9 +16,9 @@ import Business from '../Business/Business';
 import LevelTest from '../LevelTest/LevelTest';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import conversation from '../../utils/images/study_group2.jpg';
-import workshop from '../../utils/images/workshop2.jpg';
-import business from '../../utils/images/business.jpg';
-import test from '../../utils/images/examPrep.jpg';
+import workshop from '../../utils/images/workshop.jpg';
+import business from '../../utils/images/workshop2.jpg';
+import test from '../../utils/images/leveltest5.jpg';
 
 const Main = () => {
   return (
