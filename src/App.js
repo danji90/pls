@@ -37,14 +37,11 @@ const theme = createMuiTheme({
         fontWeight: '500px',
       },
     },
-    // MuiCardContent: {
-    //   root: {
-    //     padding: 10,
-    //     '&:last-child': {
-    //       paddingBottom: 0,
-    //     },
-    //   },
-    // },
+    MuiCardContent: {
+      root: {
+        height: 120,
+      },
+    },
     MuiList: {
       root: {
         fontSize: 16,
