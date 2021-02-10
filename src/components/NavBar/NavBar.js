@@ -104,14 +104,15 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const getValueFromUrl = () => {
+  return (
+    window.location.hash.split('/').length === 2 &&
+    window.location.hash.split('/')[1].toLowerCase()
+  );
+};
+
 const NavBar = () => {
   const classes = useStyles();
-  const getValueFromUrl = () => {
-    return (
-      window.location.hash.split('/').length === 2 &&
-      window.location.hash.split('/')[1].toLowerCase()
-    );
-  };
   const [value, setValue] = useState(
     tabValues.find(val => val === getValueFromUrl()) || 'home',
   );

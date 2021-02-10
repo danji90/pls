@@ -1,8 +1,12 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import { Slide, makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
+  hidden: {
+    right: -100,
+  },
   levelTestBtn: {
     textAlign: 'center',
     position: 'sticky',
@@ -16,7 +20,7 @@ const useStyles = makeStyles(theme => ({
     margin: 10,
     textDecoration: 'none',
     boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)',
-    transition: 'all 0.4s ease 0s',
+    transition: 'right 0.4s ease 0s',
     '&:hover': {
       fontWeight: 'bold',
       '-webkit-box-shadow': '0px 8px 15px rgba(0,0,0,0.4)',
@@ -34,17 +38,44 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const LevelTestBtn = () => {
+const LevelTestBtn = props => {
   const classes = useStyles();
+  const { visibleAt } = props;
+  const [scrollY, setScrollY] = useState(0);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const listenScroll = () => {
+      const maxScroll = document.body.offsetHeight - window.innerHeight;
+      setScrollY(window.scrollY);
+      setVisible(
+        window.scrollY >= visibleAt && window.scrollY <= maxScroll - 185,
+      );
+    };
+    window.addEventListener('scroll', listenScroll, { passive: true });
+    return () =>
+      window.removeEventListener('scroll', listenScroll, { passive: true });
+  }, [scrollY, visibleAt]);
+
   return (
-    <Button
-      className={classes.levelTestBtn}
-      href="https://docs.google.com/forms/d/e/1FAIpQLSfa7XH3bafMVuNxRcI2wyu1CnndZvz9MUdSw-sJtBbepVIn6Q/viewform"
-      target="_blank"
-    >
-      Free level test!
-    </Button>
+    <Slide in={visible} direction="left">
+      <Button
+        className={classes.levelTestBtn}
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfa7XH3bafMVuNxRcI2wyu1CnndZvz9MUdSw-sJtBbepVIn6Q/viewform"
+        target="_blank"
+      >
+        Free level test!
+      </Button>
+    </Slide>
   );
+};
+
+LevelTestBtn.propTypes = {
+  visibleAt: PropTypes.number,
+};
+
+LevelTestBtn.defaultProps = {
+  visibleAt: 250,
 };
 
 export default LevelTestBtn;
