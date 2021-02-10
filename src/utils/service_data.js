@@ -6,6 +6,7 @@ import workshop from './images/workshop2.jpg';
 import presentation from './images/presentation.jpg';
 import office from './images/officework.jpg';
 import inhouse from './images/inhouse_lesson.jpg';
+import selfstudy from './images/individual.jpg';
 
 export const sectionData = [
   {
@@ -223,6 +224,9 @@ export const sectionData = [
       paragraphs: [
         'For one reason or another, many people just don’t have the time to attend courses with me or at a language school, but they want to improve their English via self-study. Nowadays there’s a vast range of possibilities, especially using the internet and course ebooks. There’s so much on offer that it’s often difficult to know where to start. With my extensive teaching experience, I can give you lots of tips and suggestions for FREE! Just contact me and say something about yourself and what you need English for and I will be in touch.',
       ],
+    },
+    images: {
+      mainImage: selfstudy,
     },
     format: {
       paragraphs: [

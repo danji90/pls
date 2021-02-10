@@ -102,6 +102,7 @@ const useStyles = makeStyles(theme => ({
     height: 140,
   },
   serviceLink: {
+    color: '#353535',
     textDecoration: 'none',
     '&:visited': {
       color: 'inherit',
