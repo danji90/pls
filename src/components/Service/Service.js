@@ -17,7 +17,7 @@ import Divider from '../Divider/Divider';
 
 const linkToLevelTest = (
   <div>
-    <p>
+    <Typography>
       You will need to do a Level Test to determine your English level. Please
       click{' '}
       <a
@@ -27,7 +27,7 @@ const linkToLevelTest = (
       >
         here
       </a>
-    </p>
+    </Typography>
   </div>
 );
 
@@ -126,20 +126,21 @@ const Service = props => {
                 />
               )}
               {data.content.paragraphs.map(paragraph => (
-                <Typography key={uniqueKey()}>
-                  {renderHTML(paragraph)}
-                </Typography>
+                <div key={uniqueKey()}>
+                  <Typography>{renderHTML(paragraph)}</Typography>
+                </div>
               ))}
               {data.content.list && (
                 <List component="ol">
                   {data.content.list.map(item => (
-                    <ListItem
-                      key={uniqueKey()}
-                      className={classes.listItem}
-                      alignItems="center"
-                    >
-                      <div>{renderHTML(item)}</div>
-                    </ListItem>
+                    <div key={uniqueKey()}>
+                      <ListItem
+                        className={classes.listItem}
+                        alignItems="center"
+                      >
+                        <Typography>{renderHTML(item)}</Typography>
+                      </ListItem>
+                    </div>
                   ))}
                 </List>
               )}
@@ -158,7 +159,10 @@ const Service = props => {
                     </AccordionSummary>
                     <AccordionDetails className={classes.accordionDetails}>
                       {data.format.paragraphs.map(paragraph => (
-                        <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                        <div key={uniqueKey()}>
+                          <Typography>{renderHTML(paragraph)}</Typography>
+                          <br />
+                        </div>
                       ))}
                     </AccordionDetails>
                   </Accordion>
@@ -178,7 +182,10 @@ const Service = props => {
                     </AccordionSummary>
                     <AccordionDetails className={classes.accordionDetails}>
                       {data.cost.paragraphs.map(paragraph => (
-                        <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                        <div key={uniqueKey()}>
+                          <Typography>{renderHTML(paragraph)}</Typography>
+                          <br />
+                        </div>
                       ))}
                     </AccordionDetails>
                   </Accordion>
@@ -195,9 +202,7 @@ const Service = props => {
                 </>
               )}
               <br />
-              {data.extras && data.extras.levelTest && (
-                <Typography>{linkToLevelTest}</Typography>
-              )}
+              {data.extras && data.extras.levelTest && linkToLevelTest}
               <br />
             </div>
           </div>

@@ -4,9 +4,17 @@ import Main from './components/Main/Main';
 import './App.css';
 
 const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: 'rgb(254, 196, 79)',
+    },
+    secondary: {
+      main: '#f55',
+    },
+  },
   colors: {
-    primary: 'white',
-    secondary: '#76b833',
+    primary: 'rgb(254, 196, 79)',
+    secondary: '#f55',
   },
   typography: {
     fontSize: 16,
@@ -20,8 +28,23 @@ const theme = createMuiTheme({
         fontSize: 36,
         marginTop: 15,
         marginBottom: 15,
+        fontWeight: '500px',
+      },
+      h2: {
+        fontSize: 28,
+        marginTop: 12,
+        marginBottom: 12,
+        fontWeight: '500px',
       },
     },
+    // MuiCardContent: {
+    //   root: {
+    //     padding: 10,
+    //     '&:last-child': {
+    //       paddingBottom: 0,
+    //     },
+    //   },
+    // },
     MuiList: {
       root: {
         fontSize: 16,

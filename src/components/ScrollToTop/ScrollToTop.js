@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { history as historyPropTypes } from 'history-prop-types';
 import { withRouter } from 'react-router-dom';
 
-function ScrollToTop({ history, children }) {
+const ScrollToTop = ({ history, children }) => {
   useEffect(() => {
     const unlisten = history.listen(() => {
       window.scrollTo(0, 0);
@@ -11,10 +11,10 @@ function ScrollToTop({ history, children }) {
     return () => {
       unlisten();
     };
-  }, []);
+  }, [history]);
 
   return <>{children}</>;
-}
+};
 
 ScrollToTop.propTypes = {
   history: PropTypes.shape(historyPropTypes).isRequired,

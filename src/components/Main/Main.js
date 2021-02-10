@@ -54,12 +54,6 @@ const Main = () => {
                   <Footer />
                 </TabPanel>
               </Route>
-              {/* <Route path="/test">
-                <TabPanel index={4} backgroundImage={test}>
-                  <LevelTest />
-                  <Footer />
-                </TabPanel>
-              </Route> */}
               <Route path="/contact">
                 <TabPanel index={5}>
                   Contact Form

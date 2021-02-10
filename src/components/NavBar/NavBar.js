@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     alignItems: 'center',
     height: 60,
-    backgroundColor: theme.colors.primary,
+    backgroundColor: 'white',
     top: 0,
     borderBottom: '1px solid #35353520',
     boxShadow: '0px 10px 15px #35353520',
