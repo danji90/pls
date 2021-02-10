@@ -13,12 +13,10 @@ import NavBar from '../NavBar/NavBar';
 import Individual from '../Individual/Individual';
 import Professional from '../Professional/Professional';
 import Business from '../Business/Business';
-import LevelTest from '../LevelTest/LevelTest';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import conversation from '../../utils/images/study_group2.jpg';
 import workshop from '../../utils/images/workshop.jpg';
 import business from '../../utils/images/workshop2.jpg';
-import test from '../../utils/images/leveltest5.jpg';
 
 const Main = () => {
   return (
@@ -56,12 +54,12 @@ const Main = () => {
                   <Footer />
                 </TabPanel>
               </Route>
-              <Route path="/test">
+              {/* <Route path="/test">
                 <TabPanel index={4} backgroundImage={test}>
                   <LevelTest />
                   <Footer />
                 </TabPanel>
-              </Route>
+              </Route> */}
               <Route path="/contact">
                 <TabPanel index={5}>
                   Contact Form

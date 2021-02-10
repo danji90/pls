@@ -16,7 +16,6 @@ const useStyles = makeStyles(() => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat, repeat',
   },
-  tabPanel: {},
 }));
 
 const TabPanel = props => {

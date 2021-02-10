@@ -8,6 +8,12 @@ const theme = createMuiTheme({
     primary: 'white',
     secondary: '#76b833',
   },
+  typography: {
+    fontSize: 16,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
+  },
   overrides: {
     MuiTypography: {
       h1: {
@@ -16,13 +22,17 @@ const theme = createMuiTheme({
         marginBottom: 15,
       },
     },
+    MuiList: {
+      root: {
+        fontSize: 16,
+      },
+    },
     MuiAppBar: {
       root: {
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row',
       },
-      colorPrimary: {},
     },
     MuiTabs: {
       root: {
@@ -40,6 +50,14 @@ const theme = createMuiTheme({
     MuiBox: {
       root: {
         padding: 20,
+      },
+    },
+    MuiButton: {
+      root: {
+        textTransform: 'unset',
+        '&:hover': {
+          backgroundColor: 'auto',
+        },
       },
     },
   },

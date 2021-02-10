@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import renderHTML from 'react-render-html';
 import { v1 as uniqueKey } from 'uuid';
-import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import {
+  makeStyles,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  List,
+  ListItem,
+} from '@material-ui/core';
+import { ExpandMore } from '@material-ui/icons';
 import Divider from '../Divider/Divider';
 
 const linkToLevelTest = (
   <div>
     <p>
       You will need to do a Level Test to determine your English level. Please
-      click <Link to="/test">here</Link>
+      click{' '}
+      <a
+        href="https://docs.google.com/forms/d/e/1FAIpQLSfa7XH3bafMVuNxRcI2wyu1CnndZvz9MUdSw-sJtBbepVIn6Q/viewform"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        here
+      </a>
     </p>
   </div>
 );
@@ -65,7 +75,17 @@ const useStyles = makeStyles(theme => ({
     flex: 1,
     '& img': {
       width: '100%',
+      padding: '1px',
+      border: '3px solid black',
+      borderImage: 'none',
+      borderRadius: '0px 50px 0px 50px',
+      '-moz-border-radius': '0px 50px 0px 50px',
+      '-webkit-border-radius': '0px 50px 0px 50px',
     },
+  },
+  listItem: {
+    display: 'block',
+    lineHeight: 1.5,
   },
   dividerTop: {
     width: '100%',
@@ -106,14 +126,22 @@ const Service = props => {
                 />
               )}
               {data.content.paragraphs.map(paragraph => (
-                <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                <Typography key={uniqueKey()}>
+                  {renderHTML(paragraph)}
+                </Typography>
               ))}
               {data.content.list && (
-                <ol>
+                <List component="ol">
                   {data.content.list.map(item => (
-                    <li key={uniqueKey()}>{renderHTML(item)}</li>
+                    <ListItem
+                      key={uniqueKey()}
+                      className={classes.listItem}
+                      alignItems="center"
+                    >
+                      <div>{renderHTML(item)}</div>
+                    </ListItem>
                   ))}
-                </ol>
+                </List>
               )}
               <br />
               {data.format && (
@@ -123,7 +151,7 @@ const Service = props => {
                     expanded={expanded === 'format'}
                     onChange={handleAccordionChange('format')}
                   >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
                       <Typography variant="h6" className={classes.heading}>
                         Format
                       </Typography>
@@ -143,7 +171,7 @@ const Service = props => {
                     expanded={expanded === 'cost'}
                     onChange={handleAccordionChange('cost')}
                   >
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                    <AccordionSummary expandIcon={<ExpandMore />}>
                       <Typography variant="h6" className={classes.heading}>
                         Cost
                       </Typography>
@@ -160,12 +188,16 @@ const Service = props => {
               {data.extras && (
                 <>
                   {data.extras.paragraphs.map(paragraph => (
-                    <p key={uniqueKey()}>{renderHTML(paragraph)}</p>
+                    <Typography key={uniqueKey()}>
+                      {renderHTML(paragraph)}
+                    </Typography>
                   ))}
                 </>
               )}
               <br />
-              {data.extras && data.extras.levelTest && linkToLevelTest}
+              {data.extras && data.extras.levelTest && (
+                <Typography>{linkToLevelTest}</Typography>
+              )}
               <br />
             </div>
           </div>

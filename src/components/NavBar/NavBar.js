@@ -31,15 +31,18 @@ const useStyles = makeStyles(theme => ({
       width: '100%',
       color: 'inherit',
     },
+    '&:hover': {
+      '& img': {
+        width: '48px',
+        height: '48px',
+      },
+    },
   },
   logo: {
     padding: 5,
     width: '45px',
     height: '45px',
-    '&:hover': {
-      width: '48px',
-      height: '48px',
-    },
+    transition: 'all 200ms ease',
   },
   title: {
     [theme.breakpoints.down('sm')]: {
@@ -96,7 +99,7 @@ const useStyles = makeStyles(theme => ({
     zIndex: 1000,
   },
   open: {
-    height: 375,
+    height: 300,
     boxShadow: '0px 10px 15px #35353520',
   },
 }));
@@ -131,7 +134,9 @@ const NavBar = () => {
       <AppBar position="sticky" className={classes.appBar} color="transparent">
         <div className={classes.brand}>
           <a href="/pls/" className={classes.brand}>
-            <img src={logo} alt="pls-logo" className={classes.logo} />
+            <div style={{ width: 55 }}>
+              <img src={logo} alt="pls-logo" className={classes.logo} />
+            </div>
             <Hidden only="xs">
               <div className={classes.title}>Pete&apos;s Language Services</div>
             </Hidden>
@@ -176,13 +181,6 @@ const NavBar = () => {
               value="business"
               component={NavLink}
               label="Business Services"
-              className={classes.tab}
-            />
-            <Tab
-              to="/test"
-              value="test"
-              component={NavLink}
-              label="Level Test"
               className={classes.tab}
             />
             <Tab
@@ -259,21 +257,6 @@ const NavBar = () => {
               className={classes.listItem}
             >
               Business Services
-            </ListItem>
-            <ListItem
-              key="test"
-              active={(value === 'test').toString()}
-              button
-              divider
-              onClick={() => {
-                setValue('test');
-                setMenuOpen(false);
-              }}
-              to="/test"
-              component={NavLink}
-              className={classes.listItem}
-            >
-              Level Test
             </ListItem>
             <ListItem
               key="contact"
