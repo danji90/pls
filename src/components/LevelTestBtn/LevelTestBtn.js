@@ -4,9 +4,6 @@ import { Slide, makeStyles } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
-  hidden: {
-    right: -100,
-  },
   levelTestBtn: {
     textAlign: 'center',
     position: 'sticky',
@@ -20,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     margin: 10,
     textDecoration: 'none',
     boxShadow: '0px 8px 15px rgba(0, 0, 0, 0.2)',
-    transition: 'right 0.4s ease 0s',
+    transition: 'all 0.4s ease 0s',
     '&:hover': {
       fontWeight: 'bold',
       '-webkit-box-shadow': '0px 8px 15px rgba(0,0,0,0.4)',
